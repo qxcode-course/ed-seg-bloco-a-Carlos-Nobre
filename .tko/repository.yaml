@@ -6,6 +6,12 @@ sources:
   writeable: true
   quests: null
   tasks: null
+- name: ed
+  target: https://github.com/qxcodeed/arcade.git
+  type: git
+  writeable: false
+  quests: null
+  tasks: null
 expanded: []
 tasks: {}
 flags: {}
