@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_15-02-53",
+            "content": "@@ -58,13 +58,8 @@\n ) %7B%0A\n-    %0A\n     \n@@ -89,16 +89,17 @@\n  float64\n+;\n %0A%0A    fm\n@@ -131,16 +131,17 @@\n n2, &n3)\n+;\n %0A%0A    p \n@@ -142,17 +142,16 @@\n     p = \n-(\n n1 + n2 \n@@ -158,13 +158,13 @@\n + n3\n-)\n  / 2\n+;\n %0A%0A  \n@@ -215,16 +215,17 @@\n  (p-n3))\n+;\n %0A%0A    fm\n@@ -252,13 +252,14 @@\n esposta)\n+;\n %0A%0A%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_15-05-44",
+            "content": "@@ -109,16 +109,27 @@\n mt.Scan(\n+%22%25f %25f %25f%22,\n  &n1, &n\n@@ -130,16 +130,17 @@\n n1, &n2,\n+ \n &n3)%0A%0A  \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-11_15-07-36",
+            "content": "package main\n\nimport(\n    \"fmt\"\n    \"math\"\n)\n\n\nfunc main() {\n    \n    var n1,n2,n3,p,resposta float64\n\n    fmt.Scan( &n1, &n2,&n3)\n\n    p = (n1 + n2 + n3) / 2\n\n    resposta = math.Sqrt(p * (p-n1) * (p-n2) * (p-n3))\n\n    fmt.Printf(\"%.2f\\n\", resposta)\n\n\n}\n",
+            "lines": "22"
+        }
+    ]
+}
