@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_15-22-22",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -38,59 +38,73 @@\n  %7B%0A%0A\n-%09var nome string%0A%09fmt.Scan(&nome)%0A%0A%09var idade int%0A%09\n+    var idade int;%0A    fmt.Scan(&idade)%0A%0A    var nome string%0A    \n fmt.\n@@ -113,18 +113,15 @@\n an(&\n-idad\n+nom\n e)%0A%0A\n-%09%0A\n     \n@@ -137,14 +137,19 @@\n %3C 12\n- \n %7B%0A%0A\n-%09%09\n+        \n fmt.\n@@ -148,32 +148,33 @@\n     fmt.Println(\n+ \n nome + %22 eh cria\n@@ -176,25 +176,30 @@\n  cri\n-a\n nca%22)%0A\n-%09%09\n+        \n return%0A%0A\n %09%7D e\n@@ -186,35 +186,37 @@\n         return%0A%0A\n-%09%7D \n+    %7D\n else if idade %3E=\n@@ -232,21 +232,26 @@\n ade %3C 18\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -274,29 +274,38 @@\n jovem%22)%0A\n-%09%09\n+        \n return\n+ \n %0A%0A\n-%09%7D \n+    %7D\n else if \n@@ -329,21 +329,26 @@\n ade %3C 65\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -359,17 +359,16 @@\n nome + %22\n- \n eh adult\n@@ -375,18 +375,24 @@\n o%22)%0A\n-%09%09\n+        \n return%0A%0A\n %09%7D e\n@@ -387,19 +387,21 @@\n return%0A%0A\n-%09%7D \n+    %7D\n else if \n@@ -427,21 +427,26 @@\n e %3C 1000\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -457,17 +457,16 @@\n nome + %22\n- \n eh idoso\n@@ -472,29 +472,42 @@\n o%22)%0A\n-%09%09\n+        \n return%0A\n-%09%7D \n+    %7D\n else\n- \n %7B%0A\n-%09%09\n+        \n fmt.\n@@ -522,17 +522,16 @@\n nome + %22\n- \n eh mumia\n@@ -537,10 +537,21 @@\n a%22)%0A\n-%09%7D\n+    %7D%0A%0A%0A%0A    \n %0A%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-13_15-24-05",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar nome string\n\tfmt.Scan(&nome)\n\n\tvar idade int\n\tfmt.Scan(&idade)\n\n\t\n    if idade < 12 {\n\n\t\tfmt.Println(nome + \" eh crianca\")\n\t\treturn\n\n\t} else if idade >= 12 && idade < 18 {\n\t\tfmt.Println(nome + \" eh jovem\")\n\t\treturn\n\n\t} else if idade >= 18 && idade < 65 {\n\t\tfmt.Println(nome + \" eh adulto\")\n\t\treturn\n\n\t} else if idade >= 65 && idade < 1000 {\n\t\tfmt.Println(nome + \" eh idoso\")\n\t\treturn\n\t} else {\n\t\tfmt.Println(nome + \" eh mumia\")\n\t}\n\n}\n",
+            "lines": "34"
+        }
+    ]
+}
