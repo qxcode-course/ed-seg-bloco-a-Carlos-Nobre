@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_23-28-31",
+            "content": "@@ -461,16 +461,39 @@\n  %7D%0A%0A    \n+campeao := jogadores%5B0%5D\n %0A    mai\n@@ -544,221 +544,8 @@\n 0%5D))\n-%0A    var campeao int %0A%0A    for i := 0; i %3C qntCompetidores; i++%7B%0A        if(fist%5Bi%5D %3C 10 %7C%7C second%5Bi%5D %3C 10)%7B%0A            continue%0A        %7Delse%7B%0A            campeao = jogadores%5Bi%5D%0A            break%0A        %7D%0A    %7D\n %0A%0A  \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-16_23-33-17",
+            "content": "@@ -923,17 +923,17 @@\n if diff \n-%3C\n+%3E\n  maiorDi\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-16_23-34-36",
+            "content": "@@ -470,47 +470,75 @@\n     \n-%0A    var campeao int %0A    var maiorDiff\n+maiorDiff := math.Abs(float64(fist%5B0%5D - second%5B0%5D))%0A    var campeao\n  int\n@@ -701,76 +701,8 @@\n %5Bi%5D%0A\n-            maiorDiff = int(math.Abs(float64(fist%5Bi%5D - second%5Bi%5D)))%0A\n     \n@@ -736,14 +736,8 @@\n  %7D%0A%0A\n-    %0A%0A\n     \n@@ -922,21 +922,21 @@\n  if \n-maiorDiff %3E d\n+diff %3C maiorD\n iff%7B\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-16_23-37-41",
+            "content": "@@ -913,20 +913,16 @@\n diff := \n-int(\n math.Abs\n@@ -951,17 +951,16 @@\n ond%5Bi%5D))\n-)\n %0A%0A      \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_23-38-25",
+            "content": "@@ -648,33 +648,44 @@\n       campeao = \n-i\n+jogadores%5Bi%5D\n %0A            mai\n@@ -1038,17 +1038,28 @@\n mpeao = \n-i\n+jogadores%5Bi%5D\n %0A       \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_23-40-01",
+            "content": "@@ -207,16 +207,58 @@\n res)%0A   \n+ jogadores := make(%5B%5Dint, qntCompetidores)\n %0A%0A    fo\n@@ -367,16 +367,42 @@\n undo)%0A%0A%0A\n+        jogadores%5Bi%5D = i+1\n %0A       \n@@ -623,110 +623,8 @@\n nue%0A\n-        %7Delse if i == qntCompetidores - 1 && fist%5Bi%5D %3C 10 && second%5Bi%5D %3C 10%7B%0A            campeao = -1%0A\n     \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_23-45-15",
+            "content": "@@ -653,34 +653,16 @@\n ao = -1%0A\n-            break%0A\n         \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-16_23-45-52",
+            "content": "@@ -601,34 +601,34 @@\n && fist%5Bi%5D %3C 10 \n-%7C%7C\n+&&\n  second%5Bi%5D %3C 10%7B\n@@ -661,24 +661,29 @@\n             \n+break\n %0A        %7Del\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-46-41",
+            "content": "@@ -596,17 +596,16 @@\n  - 1 && \n-(\n fist%5Bi%5D \n@@ -618,33 +618,32 @@\n %7C second%5Bi%5D %3C 10\n-)\n %7B%0A            ca\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-47-12",
+            "content": "@@ -659,37 +659,32 @@\n  -1%0A            \n-break\n %0A        %7Delse%7B%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-47-48",
+            "content": "@@ -656,10 +656,10 @@\n o = \n-99\n+-1\n %0A   \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-47-55",
+            "content": "@@ -588,17 +588,19 @@\n etidores\n--\n+ - \n 1 && (fi\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-48-25",
+            "content": "@@ -574,9 +574,9 @@\n f i \n-!\n+=\n = qn\n@@ -588,19 +588,17 @@\n etidores\n- - \n+-\n 1 && (fi\n@@ -620,32 +620,90 @@\n econd%5Bi%5D %3C 10)%7B%0A\n+            campeao = 99%0A            break%0A        %7Delse%7B%0A\n             camp\n@@ -778,16 +778,16 @@\n d%5Bi%5D)))%0A\n+\n         \n@@ -800,48 +800,8 @@\n eak%0A\n-        %7Delse%7B%0A            campeao = -1%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-16_23-49-50",
+            "content": "@@ -325,24 +325,16 @@\n undo)%0A%0A%0A\n-        \n %0A       \n@@ -564,16 +564,80 @@\n    %7Delse\n+ if i != qntCompetidores - 1 && (fist%5Bi%5D %3C 10 %7C%7C second%5Bi%5D %3C 10)\n %7B%0A      \n@@ -740,16 +740,56 @@\n   break%0A\n+        %7Delse%7B%0A            campeao = -1%0A\n         \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-16_23-51-18",
+            "content": "@@ -989,80 +989,9 @@\n   %7D%0A\n-    if campeao == 0%7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7Delse%7B%0A    \n+%0A\n     \n@@ -1011,18 +1011,11 @@\n ampeao)%0A\n-    %7D%0A%0A\n %0A%7D%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_23-52-16",
+            "content": "package main\nimport (\n    \"fmt\"\n    \"math\"\n    \n)\n\nfunc main() {\n    var qntCompetidores int;\n\n    fmt.Scan(&qntCompetidores)\n\n    fist := make([]int, qntCompetidores)\n    second := make([]int, qntCompetidores)\n   \n\n    for i := 0; i < qntCompetidores; i++{\n        var primeiro,segundo int\n        fmt.Scan(&primeiro , &segundo)\n\n\n        \n        fist[i] = primeiro\n        second[i] = segundo\n\n    }\n\n    \n    \n    var campeao int \n    var maiorDiff int \n\n    for i := 0; i < qntCompetidores; i++{\n        if(fist[i] < 10 || second[i] < 10){\n            continue\n        }else{\n            campeao = i\n            maiorDiff = int(math.Abs(float64(fist[i] - second[i])))\n            break\n        }\n    }\n\n    \n\n    for i := 1; i < qntCompetidores; i++{ \n        if(fist[i] < 10 || second[i] < 10){\n            continue\n        }\n\n        diff := int(math.Abs(float64(fist[i] - second[i])))\n\n        if maiorDiff > diff{\n            maiorDiff = diff\n            campeao = i\n        }\n    }\n    if campeao == 0{\n        fmt.Println(\"sem ganhador\")\n    }else{\n        fmt.Println(campeao)\n    }\n\n\n}\n",
+            "lines": "64"
+        }
+    ]
+}
