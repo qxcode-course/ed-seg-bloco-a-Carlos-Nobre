@@ -1,0 +1,8 @@
+2026-03-17 08:40:49, MOVE, v:1, k:ed@casais, mode:DOWN
+2026-03-17 08:59:18, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 08:59:38, EXEC, v:1, k:ed@casais, mode:FREE, size:30
+2026-03-17 09:00:29, EXEC, v:1, k:ed@casais, mode:FULL, rate:50
+2026-03-17 09:04:42, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 09:12:18, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:36
+2026-03-17 09:13:02, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 09:13:32, SELF, v:1, k:ed@casais, self:1, rate:100, study:32, friend:nao

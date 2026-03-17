@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_08-59-38",
+            "content": "@@ -358,70 +358,8 @@\n  0%7B%0A\n-                animais%5Bi%5D = 0%0A                animais%5Bj%5D = 0%0A\n     \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-17_09-04-42",
+            "content": "@@ -313,93 +313,8 @@\n ++%7B%0A\n-            if(animais%5Bi%5D == 0)%7B%0A                continue%0A            %7D%0A            %0A\n     \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_09-12-18",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\nfunc main() {\n    var qntAnimais int\n\n    fmt.Scan(&qntAnimais)\n\n    animais := make([]int, qntAnimais)\n    \n    \n    for i:=0; i < qntAnimais; i++{\n        fmt.Scan(&animais[i])\n    }\n\n    var pares int;\n\n    for i:=0; i < qntAnimais; i++{\n       for j := i+1 ; j < qntAnimais; j++{\n            if(animais[i] == 0){\n                continue\n            }\n            \n            if animais[i] + animais[j] == 0{\n                animais[i] = 0\n                animais[j] = 0\n                pares++\n            }\n       }\n    \n    }\n\n    fmt.Println(pares)\n}\n",
+            "lines": "36"
+        }
+    ]
+}
