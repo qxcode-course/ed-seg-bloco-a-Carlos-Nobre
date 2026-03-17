@@ -13,8 +13,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
+- ed@revisão
 tasks:
   ed@pintando: '{self:1, rate:100, study:20, friend:nao, debug:1}'
   ed@mumia: '{self:1, rate:100, study:17, friend:nao}'
@@ -29,4 +29,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@casais
+selected: ed@baruel
