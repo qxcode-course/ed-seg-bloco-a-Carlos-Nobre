@@ -1,0 +1,5 @@
+2026-03-21 23:08:07, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-21 23:08:06, EXEC, v:1, k:ed@baruel, mode:FULL, rate:25, size:68
+2026-03-21 23:08:48, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100, size:68
+2026-03-21 23:09:35, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-21 23:10:10, SELF, v:1, k:ed@baruel, self:1, rate:100, study:120, friend:nao, guided:1, concept:1

@@ -13,14 +13,15 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@main-quest
 - ed@revisão
+- ed@main-quest
 tasks:
   ed@pintando: '{self:1, rate:100, study:20, friend:nao, debug:1}'
   ed@mumia: '{self:1, rate:100, study:17, friend:nao}'
   ed@fuga: '{self:1, rate:100, study:35, friend:nao}'
   ed@pedra: '{self:1, rate:100, study:50, friend:nao, guided:1}'
   ed@casais: '{self:1, rate:100, study:32, friend:nao}'
+  ed@baruel: '{self:1, rate:100, study:120, friend:nao, guided:1, concept:1}'
 flags:
   painel: 0
   quests: 2
