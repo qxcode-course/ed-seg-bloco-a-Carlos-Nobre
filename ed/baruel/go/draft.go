@@ -8,6 +8,8 @@ func main() {
     qtdAlbum := 0
     qtdFigurinhas := 0
 
+    
+
     fmt.Scan(&qtdAlbum, &qtdFigurinhas)
 
     album := map[int]bool{}

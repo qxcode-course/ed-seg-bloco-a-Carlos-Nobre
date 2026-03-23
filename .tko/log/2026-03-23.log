@@ -1,0 +1,10 @@
+2026-03-23 18:03:29, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-23 18:03:30, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100, size:71
+2026-03-23 18:03:36, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-23 18:03:38, MOVE, v:1, k:ed@pintando, mode:PICK
+2026-03-23 18:03:39, EXEC, v:1, k:ed@pintando, mode:FULL, rate:100
+2026-03-23 18:03:46, MOVE, v:1, k:ed@pintando, mode:BACK
+2026-03-23 18:03:47, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-23 18:03:48, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100
+2026-03-23 18:03:54, MOVE, v:1, k:ed@mumia, mode:BACK
+2026-03-23 18:04:15, MOVE, v:1, k:ed@gomos, mode:DOWN
