@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_23-54-00",
+            "content": "@@ -522,18 +522,18 @@\n bra%5B0%5D.y\n---\n+++\n %0A       \n@@ -561,26 +561,26 @@\n   cobra%5B0%5D.y\n-++\n+--\n %0A    %7D%0A%0A    \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-23_23-54-37",
+            "content": "package main\nimport \"fmt\"\n\ntype Gomo struct{\n    x,y int\n}\n\nfunc main() {\n    qtdGomos := 0\n    var dir rune\n\n    fmt.Scan(&qtdGomos)\n    fmt.Scanf(\"%c\", &dir)\n\n    cobra := make([]Gomo, qtdGomos)\n\n    for i:= range cobra{\n        fmt.Scan(&cobra[i].x, &cobra[i].y)\n    }\n\n    for i := qtdGomos - 1; i > 0; i--{\n        cobra[i].x = cobra[i-1].x\n        cobra[i].y = cobra[i-1].y\n    }\n\n    switch dir{\n        case 'R':\n            cobra[0].x++\n        case 'L':\n            cobra[0].x--\n        case 'U':\n            cobra[0].y--\n        case 'D':\n            cobra[0].y++\n    }\n\n    for _, gomo := range cobra{\n        fmt.Println(gomo.x, gomo.y)\n    }\n\n}\n\n",
+            "lines": "42"
+        }
+    ]
+}
