@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_16-07-17",
+            "content": "@@ -142,37 +142,8 @@\n o)%0A%0A\n-    assasino = assasino - 1%0A%0A\n     \n@@ -195,513 +195,41 @@\n     \n-eliminar(rodaMorte,assasino)%0A    %0A%7D%0A%0Afunc eliminar(rodaMorte %5B%5Dint, assasino int) %7B%0A%0A    imprimir(rodaMorte,assasino)%0A%0A    if len(rodaMorte) == 1 %7B%0A        return %0A    %7D%0A%0A    if assasino %3E len(rodaMorte)%7B%0A        rodaMorte = rodaMorte%5B1:%5D%0A        assasino = 0%0A%0A    %7Delse%7B%0A        rodaMorte = append(rodaMorte%5B:assasino + 1%5D, rodaMorte%5Bassasino+2:%5D...)%0A    %7D%0A%0A    eliminar(rodaMorte,assasino)%0A%0A%7D%0A%0Afunc imprimir(rodaMorte %5B%5Dint, assasino int) %7B%0A%0A    var str string = %22%5B %22%0A%0A    for i := 0; i %3C len(rodaMorte)\n+for i := 0; i %3C numeroIntegrantes\n ; i+\n@@ -244,201 +244,72 @@\n     \n-if i == assasino %7B%0A            str += fmt.Sprintf(%22%25d%3E %22, rodaMorte%5Bi%5D)%0A        %7D else %7B%0A  \n+rodaMorte%5Bi%5D = i + 1;%0A    %7D%0A\n     \n-  \n+%0A\n     \n-str += fmt.Sprintf(%22%25d %22, rodaMorte%5Bi%5D)%0A        %7D%0A    %7D%0A%0A    str += %22%5D%22%0A    fmt.Println(str)\n+for true%7B%0A    %0A    %7D%0A%0A%0A%0A%0A\n %0A%7D%0A%0A\n+%0A%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-24_16-54-45",
+            "content": "@@ -220,90 +220,8 @@\n s)%0A%0A\n-    for i := 0; i %3C numeroIntegrantes; i++ %7B%0A        rodaMorte%5Bi%5D = i + 1;%0A    %7D%0A%0A\n     \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-24_16-55-51",
+            "content": "@@ -658,40 +658,8 @@\n ..)%0A\n-        assasino = assasino + 1%0A\n     \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-24_16-56-43",
+            "content": "@@ -490,17 +490,16 @@\n sasino %3E\n-=\n  len(rod\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-24_16-57-10",
+            "content": "@@ -490,16 +490,17 @@\n sasino %3E\n+=\n  len(rod\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-24_16-57-29",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -35,17 +35,20 @@\n in() %7B%0A%0A\n-%09\n+    \n numeroIn\n@@ -62,17 +62,20 @@\n es := 0%0A\n-%09\n+    \n assasino\n@@ -80,17 +80,20 @@\n no := 0%0A\n-%09\n+    \n fmt.Scan\n@@ -113,17 +113,20 @@\n rantes)%0A\n-%09\n+    \n fmt.Scan\n@@ -138,17 +138,20 @@\n asino)%0A%0A\n-%09\n+    \n assasino\n@@ -167,17 +167,20 @@\n no - 1%0A%0A\n-%09\n+    \n rodaMort\n@@ -216,17 +216,20 @@\n antes)%0A%0A\n-%09\n+    \n for i :=\n@@ -261,18 +261,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n rodaMort\n@@ -289,22 +289,29 @@\n  = i + 1\n-%0A%09%7D%0A%0A%09\n+;%0A    %7D%0A%0A    \n eliminar\n@@ -313,33 +313,32 @@\n minar(rodaMorte,\n- \n assasino)%0A%0A%7D%0A%0Afu\n@@ -323,32 +323,36 @@\n Morte,assasino)%0A\n+    \n %0A%7D%0A%0Afunc elimina\n@@ -387,17 +387,20 @@\n int) %7B%0A%0A\n-%09\n+    \n imprimir\n@@ -402,33 +402,32 @@\n rimir(rodaMorte,\n- \n assasino)%0A%0A%09if l\n@@ -421,17 +421,20 @@\n asino)%0A%0A\n-%09\n+    \n if len(r\n@@ -454,22 +454,35 @@\n 1 %7B%0A\n-%09%09return%0A%09%7D%0A%0A%09\n+        return %0A    %7D%0A%0A    \n if a\n@@ -505,21 +505,26 @@\n daMorte)\n- \n %7B%0A\n-%09%09\n+        \n rodaMort\n@@ -541,18 +541,24 @@\n rte%5B1:%5D%0A\n-%09%09\n+        \n assasino\n@@ -562,28 +562,36 @@\n ino = 0%0A\n-%09%7D \n+%0A    %7D\n else\n- \n %7B%0A\n-%09%09\n+        \n rodaMort\n@@ -620,17 +620,19 @@\n assasino\n-+\n+ + \n 1%5D, roda\n@@ -654,18 +654,24 @@\n 2:%5D...)%0A\n-%09%09\n+        \n assasino\n@@ -673,17 +673,16 @@\n asino = \n-(\n assasino\n@@ -689,32 +689,20 @@\n  + 1\n-) %25 len(rodaMorte)%0A%09%7D%0A%0A%09\n+%0A    %7D%0A%0A    \n elim\n@@ -716,17 +716,16 @@\n daMorte,\n- \n assasino\n@@ -778,17 +778,20 @@\n int) %7B%0A%0A\n-%09\n+    \n var str \n@@ -805,17 +805,20 @@\n = %22%5B %22%0A%0A\n-%09\n+    \n for i :=\n@@ -847,18 +847,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if i == \n@@ -874,19 +874,28 @@\n asino %7B%0A\n-%09%09%09\n+            \n str += f\n@@ -927,18 +927,24 @@\n rte%5Bi%5D)%0A\n-%09%09\n+        \n %7D else %7B\n@@ -948,11 +948,20 @@\n e %7B%0A\n-%09%09%09\n+            \n str \n@@ -1000,17 +1000,29 @@\n i%5D)%0A\n-%09%09%7D%0A%09%7D%0A%0A%09\n+        %7D%0A    %7D%0A%0A    \n str \n@@ -1032,9 +1032,12 @@\n %22%5D%22%0A\n-%09\n+    \n fmt.\n@@ -1051,8 +1051,9 @@\n (str)%0A%7D%0A\n+%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-24_16-58-02",
+            "content": "@@ -511,157 +511,10 @@\n e %7B%0A\n-        if assasino+2 %3E len(rodaMorte)%7B%0A            rodaMorte = append(rodaMorte%5B:assasino+1%5D, rodaMorte%5Bassasino+1:%5D...)%0A        %7Delse%7B%0A            \n+%09%09\n roda\n@@ -583,21 +583,8 @@\n ..)%0A\n-        %7D%0A%09%09%0A\n %09%09as\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-24_16-59-57",
+            "content": "@@ -744,32 +744,33 @@\n %09%09%0A%09%09assasino = \n+(\n assasino + 1%0A%09%7D%0A\n@@ -761,24 +761,42 @@\n assasino + 1\n+) %25 len(rodaMorte)\n %0A%09%7D%0A%0A%09elimin\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-00-17",
+            "content": "@@ -633,33 +633,8 @@\n ..)%0A\n-            assasino = 0%0A\n     \n@@ -734,20 +734,23 @@\n         \n-    \n+%7D%0A%09%09%0A%09%09\n assasino\n@@ -769,24 +769,8 @@\n + 1%0A\n-        %7D%0A%09%09%0A%09%09%0A\n %09%7D%0A%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-00-37",
+            "content": "@@ -507,18 +507,24 @@\n  else %7B%0A\n-%09%09\n+        \n if assas\n@@ -545,22 +545,30 @@\n daMorte)\n- \n %7B%0A\n-%09%09%09\n+            \n rodaMort\n@@ -625,27 +625,36 @@\n ino+1:%5D...)%0A\n-%09%09%09\n+            \n assasino = 0\n@@ -654,30 +654,43 @@\n ino = 0%0A\n-%09%09%7D \n+        %7D\n else\n- \n %7B%0A\n-%09%09%09\n+            \n rodaMort\n@@ -751,19 +751,28 @@\n 2:%5D...)%0A\n-%09%09%09\n+            \n assasino\n@@ -787,20 +787,31 @@\n ino + 1%0A\n+        %7D%0A%09%09%0A\n %09%09\n-%7D%0A\n %0A%09%7D%0A%0A%09el\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-03-24_17-00-40",
+            "content": "@@ -525,12 +525,11 @@\n ino+\n-1 ==\n+2 %3E\n  len\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-24_17-01-26",
+            "content": "@@ -17,1075 +17,1048 @@\n port\n-(%0A%09\n+ \n %22fmt%22%0A\n-%09%22strings%22%0A%09%22strconv%22%0A)%0A%0Afunc mostrarjogadores(rodaMorte %5B%5Dbool, espada int) string %7B%0A%09var builder strings.Builder%0A%0A%09builder.WriteString(%22%5B %22)%0A%0A%09for i, v := range rodaMorte %7B%0A%09%09if !v %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09builder.WriteString(strconv.Itoa(i + 1))%0A%09%09builder.WriteByte(' ')%0A%0A%09%09if i+1 == espada %7B%0A%09%09%09builder.WriteString(%22%3E %22)%0A%09%09%7D%0A%09%7D%0A%0A%09builder.WriteString(%22%5D%22)%0A%0A%09return builder.String()%0A%7D%0A%0Afunc acharVivo(rodaMorte %5B%5Dbool, espada int)\n+%0Afunc main() %7B%0A%0A%09numeroIntegrantes := 0%0A%09assasino := 0%0A%09fmt.Scan(&numeroIntegrantes)%0A%09fmt.Scan(&assasino)%0A%0A%09assasino = assasino - 1%0A%0A%09rodaMorte := make(%5B%5Dint, numeroIntegrantes)%0A%0A%09for i := 0; i %3C numeroIntegrantes; i++ %7B%0A%09%09rodaMorte%5Bi%5D = i + 1%0A%09%7D%0A%0A%09eliminar(rodaMorte, assasino)%0A%0A%7D%0A%0Afunc eliminar(rodaMorte %5B%5Dint, assasino\n  int\n+)\n  %7B%0A\n-%09var vivo int%0A%0A%09for i := espada - 1; i %3C len(rodaMorte); i++ %7B%0A%09%09if i == len(rodaMorte) - 1 %7B%0A%09%09%09i = 0%0A%09%09%7D%0A%09%09if rodaMorte%5Bi%5D == false %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09if rodaMorte%5Bi%5D == true%7B%0A%09%09%09viv\n+%0A%09imprimir(rodaMorte, assasino)%0A%0A%09if len(rodaMorte) == 1 %7B%0A%09%09return%0A%09%7D%0A%0A%09if assasino %3E len(rodaMorte) %7B%0A%09%09rodaMorte = rodaMorte%5B1:%5D%0A%09%09assasino = 0%0A%09%7D else %7B%0A%09%09if assasino+1 == len(rodaMorte) %7B%0A%09%09%09rodaMorte = append(rodaMorte%5B:assasino+1%5D, rodaMorte%5Bassasino+1:%5D...)%0A%09%09%09assasin\n o = \n-i %0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%09return vivo%0A%7D%0A%0A%0A%0A%0A%0Afunc main() %7B%0A%09%0A%09var qntPe\n+0%0A%09%09%7D else %7B%0A%09%09%09rodaMorte = append(rodaMorte%5B:a\n ss\n-o\n as\n-, espada int%0A%09fmt.Scan(&qntPe\n+ino+1%5D, rodaMorte%5Bassasino+2:%5D...)%0A%09%09%09a\n ss\n-o\n as\n-, &espada)%0A%0A%09rodaMorte := make(%5B%5Dbool, qntPe\n+ino = assasino + 1%0A%09%09%7D%0A%0A%09%7D%0A%0A%09eliminar(rodaMorte, a\n ss\n-o\n as\n-)%0A%0A%09for i :=  range rodaMorte%7B%0A%09%09rodaMorte%5Bi%5D = true%0A%09%7D%0A%0A%09for i := 0; i %3C qntPessoas - 1; i++ %7B%0A%09%09mostrarjogadores(rodaMorte,espada)%0A%09%09vivo := acharVivo(rodaMorte, espada)%0A%09%09rodaMorte%5Bvivo%5D = fa\n+ino)%0A%0A%7D%0A%0Afunc imprimir(rodaMorte %5B%5Dint, assasino int) %7B%0A%0A%09var str string = %22%5B %22%0A%0A%09for i := 0; i %3C len(rodaMorte); i++ %7B%0A%09%09if i == assasino %7B%0A%09%09%09str += fmt.Sprintf(%22%25d%3E %22, rodaMorte%5Bi%5D)%0A%09%09%7D e\n lse\n+ %7B\n %0A%09%09\n-espada = acharVivo(rodaMorte,espada) + 1\n+%09str += fmt.Sprintf(%22%25d %22, rodaMorte%5Bi%5D)%0A%09%09%7D\n %0A%09%7D%0A%0A%09\n-mo\n str\n-arjogadores(rodaMorte,espada\n+ += %22%5D%22%0A%09fmt.Println(str\n )%0A\n-%0A\n %7D%0A\n-%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-30_16-23-37",
+            "content": "@@ -897,28 +897,16 @@\n i++ %7B%0A%09%09\n-fmt.Println(\n mostrarj\n@@ -931,17 +931,16 @@\n ,espada)\n-)\n %0A%09%09vivo \n@@ -1049,20 +1049,8 @@\n %7D%0A%0A%09\n-fmt.Println(\n most\n@@ -1079,14 +1079,13 @@\n ,espada)\n-)\n %0A%0A%7D%0A%0A\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-03-30_16-25-02",
+            "content": "@@ -462,51 +462,84 @@\n  %7B%0A%09\n-i := espada - 1%0A%09var vivo int%0A%0A%09for %7B%0A%09%09if \n+var vivo int%0A%0A%09for i := espada - 1; i %3C len(rodaMorte); i++ %7B%0A%09%09if i == len(\n roda\n@@ -547,89 +547,130 @@\n orte\n-%5Bi%5D\n+) - 1\n  %7B%0A%09%09%09\n-vivo = i%0A%09%09%09break%0A%09%09%7D%0A%09%09i++%0A%0A%09%09if i == len(rodaMorte) %7B%0A%09%09%09i = 0\n+i = 0%0A%09%09%7D%0A%09%09if rodaMorte%5Bi%5D == false %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09if rodaMorte%5Bi%5D == true%7B%0A%09%09%09vivo = i %0A%09%09%09break\n %0A%09%09%7D%0A%09%7D%0A\n %09%0A%09r\n@@ -665,18 +665,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%09%0A\n %09return \n@@ -682,16 +682,19 @@\n ivo%0A%7D%0A%0A%0A\n+%0A%0A%0A\n func mai\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-03-30_16-30-35",
+            "content": "@@ -266,16 +266,41 @@\n (i + 1))\n+%0A%09%09builder.WriteByte(' ')\n %0A%0A%09%09if i\n@@ -350,41 +350,8 @@\n %0A%09%09%7D\n-%0A%0A%09%09%0A%09%09builder.WriteByte(' ')%0A%0A%09%09\n %0A%09%7D%0A\n@@ -591,16 +591,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09\n %0A%09return\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-03-30_16-31-48",
+            "content": "@@ -314,16 +314,17 @@\n tring(%22%3E\n+ \n %22)%0A%09%09%7D%0A%0A\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-03-30_16-32-03",
+            "content": "@@ -476,16 +476,20 @@\n = espada\n+ - 1\n %0A%09var vi\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-03-30_16-32-35",
+            "content": "@@ -476,33 +476,16 @@\n = espada\n- %25 len(rodaMorte)\n %0A%09var vi\n@@ -551,20 +551,21 @@\n %0A%09%09i\n- = (i + 1) %25\n+++%0A%0A%09%09if i ==\n  len\n@@ -575,16 +575,31 @@\n daMorte)\n+ %7B%0A%09%09%09i = 0%0A%09%09%7D\n %0A%09%7D%0A%0A%09re\n@@ -952,24 +952,17 @@\n a = \n-(vivo + 1) %25 len\n+acharVivo\n (rod\n@@ -967,16 +967,23 @@\n odaMorte\n+,espada\n ) + 1%0A%09%7D\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-03-30_16-36-09",
+            "content": "@@ -953,68 +953,39 @@\n a = \n+(\n vivo + \n-2%0A%09%09%0A%09%09if espada %3E len(rodaMorte) %7B%0A%09%09%09espada = 1%0A%09%09%7D\n+1) %25 len(rodaMorte) + 1\n %0A%09%7D%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-03-30_16-41-09",
+            "content": "@@ -953,86 +953,19 @@\n a = \n-(\n vivo + \n-1) %25 len(rodaMorte) + 1%0A%09%09espada = acharVivo(rodaMorte, espada-1) + 1%0A\n+2%0A%09%09\n %0A%09%09i\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-03-30_16-44-55",
+            "content": "package main\n\nimport(\n\t\"fmt\"\n\t\"strings\"\n\t\"strconv\"\n)\n\nfunc mostrarjogadores(rodaMorte []bool, espada int) string {\n\tvar builder strings.Builder\n\n\tbuilder.WriteString(\"[ \")\n\n\tfor i, v := range rodaMorte {\n\t\tif !v {\n\t\t\tcontinue\n\t\t}\n\n\t\tbuilder.WriteString(strconv.Itoa(i + 1))\n\n\t\tif i+1 == espada {\n\t\t\tbuilder.WriteString(\">\")\n\t\t}\n\n\t\t\n\t\tbuilder.WriteByte(' ')\n\n\t\t\n\t}\n\n\tbuilder.WriteString(\"]\")\n\n\treturn builder.String()\n}\n\nfunc acharVivo(rodaMorte []bool, espada int) int {\n\ti := espada % len(rodaMorte)\n\tvar vivo int\n\n\tfor {\n\t\tif rodaMorte[i] {\n\t\t\tvivo = i\n\t\t\tbreak\n\t\t}\n\t\ti = (i + 1) % len(rodaMorte)\n\t}\n\n\treturn vivo\n}\n\n\nfunc main() {\n\t\n\tvar qntPessoas, espada int\n\tfmt.Scan(&qntPessoas, &espada)\n\n\trodaMorte := make([]bool, qntPessoas)\n\n\tfor i :=  range rodaMorte{\n\t\trodaMorte[i] = true\n\t}\n\n\tfor i := 0; i < qntPessoas - 1; i++ {\n\t\tfmt.Println(mostrarjogadores(rodaMorte,espada))\n\t\tvivo := acharVivo(rodaMorte, espada)\n\t\trodaMorte[vivo] = false\n\t\tespada = (vivo + 1) % len(rodaMorte) + 1\n\t\tespada = acharVivo(rodaMorte, espada-1) + 1\n\n\t\tif espada > len(rodaMorte) {\n\t\t\tespada = 1\n\t\t}\n\t}\n\n\tfmt.Println(mostrarjogadores(rodaMorte,espada))\n\n}\n\n",
+            "lines": "78"
+        }
+    ]
+}
