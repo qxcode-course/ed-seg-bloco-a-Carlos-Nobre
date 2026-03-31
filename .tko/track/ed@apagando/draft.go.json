@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_16-16-45",
+            "content": "@@ -533,16 +533,18 @@\n mt.Print\n+ln\n (k)%0A%09%09fm\n@@ -550,16 +550,18 @@\n mt.Print\n+ln\n (%22 %22)%0A%09%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-31_16-17-16",
+            "content": "@@ -24,193 +24,298 @@\n t%22%0A%0A\n-func main() %7B%0A%09var numeroPessoas,numeroSaidas int%0A%09fmt.Scan(&numeroPessoas)%0A%0A%09fila := make(%5B%5Dint, numeroPessoas)%0A%0A%09for i := range fila%7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%0A%09fmt.Scan(&numeroSaidas)\n+%0Afunc retirarPessoa(fila map%5Bint%5Dbool, pessoa int) %7B%0A%09if fila%5Bpessoa%5D %7B%0A%09%09delete(fila, pessoa)%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%09var numeroPessoas,numeroSaidas int%0A%09fmt.Scan(&numeroPessoas)%0A%0A%09fila := make(map%5Bint%5Dbool)%0A%0A%09for i := 0; i %3C numeroPessoas; i++%7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09fila%5Bx%5D = true%0A%09%7D\n %0A%0A%09p\n@@ -335,28 +335,21 @@\n := make(\n-map%5Bint%5Dbool\n+%5B%5Dint\n , numero\n@@ -371,116 +371,71 @@\n  := \n-0; i %3C numeroSaidas; i++ %7B%0A%09%09var pessoa int%0A%09%09fmt.Scan(&pessoa)%0A%09%09pessoasSairam%5Bpessoa%5D = true\n+range pessoasSairam%7B%0A%09%09fmt.Scan(&pessoasSairam%5Bi%5D)\n %0A%09%7D%0A%0A\n-%0A\n %09for _, \n valo\n@@ -430,21 +430,22 @@\n %09for _, \n-valor\n+pessoa\n  := rang\n@@ -450,20 +450,8 @@\n nge \n-fila %7B%0A%09%09if \n pess\n@@ -463,39 +463,71 @@\n iram\n-%5Bvalor%5D%7B%0A%09%09%09continue%0A%09%09%7Delse\n+ %7B%0A%09%09retirarPessoa(fila, pessoa)%0A%09%7D%0A%0A%0A%09for k,_ := range fila \n %7B%0A\n-%09\n %09%09fm\n@@ -538,16 +538,11 @@\n int(\n-valor\n+k\n )%0A\n-%09\n %09%09fm\n@@ -558,12 +558,8 @@\n  %22)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-31_16-27-24",
+            "content": "@@ -497,18 +497,6 @@\n %09%7D%0A%0A\n-%09println()%0A%0A\n %7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-31_16-28-01",
+            "content": "@@ -498,22 +498,16 @@\n %7D%0A%0A%09\n-fmt.P\n+p\n rintln(\n-%22%22\n )%0A%0A%7D\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_16-28-35",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n\tvar numeroPessoas,numeroSaidas int\n\tfmt.Scan(&numeroPessoas)\n\n\tfila := make([]int, numeroPessoas)\n\n\tfor i := range fila{\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tfmt.Scan(&numeroSaidas)\n\n\tpessoasSairam := make(map[int]bool, numeroSaidas)\n\n\tfor i := 0; i < numeroSaidas; i++ {\n\t\tvar pessoa int\n\t\tfmt.Scan(&pessoa)\n\t\tpessoasSairam[pessoa] = true\n\t}\n\n\n\tfor _, valor := range fila {\n\t\tif pessoasSairam[valor]{\n\t\t\tcontinue\n\t\t}else{\n\t\t\tfmt.Print(valor)\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\n\tfmt.Println(\"\")\n\n}\n",
+            "lines": "36"
+        }
+    ]
+}
