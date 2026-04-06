@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-05_23-37-06",
+            "content": "@@ -224,24 +224,36 @@\n f(%22%25d%22, v))%0A\n+%09%09%09continue%0A\n %09%09%7D%0A%09%09if i =\n@@ -313,16 +313,28 @@\n n%22, v))%0A\n+%09%09%09continue%0A\n %09%09%7D%0A%09%09s.\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-04-05_23-38-01",
+            "content": "@@ -234,24 +234,9 @@\n )%0A%09%09\n-%09continue%0A%09%09%7D%0A%09%09\n+%7D\n %0A%09%09i\n@@ -291,16 +291,19 @@\n ntf(%22 %25d\n+%5D%5Cn\n %22, v))%0A%09\n@@ -308,15 +308,9 @@\n %0A%09%09%7D\n-else%7B%0A%09\n+%0A\n %09%09s.\n@@ -349,15 +349,8 @@\n v))%0A\n-%09%09%7D%0A%09%09%0A\n %09%7D%0A%0A\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-05_23-39-50",
+            "content": "@@ -187,9 +187,10 @@\n f i \n-%3E\n+==\n  0%7B%0A\n@@ -210,90 +210,174 @@\n ing(\n+fmt.Sprintf(%22%25d\n %22, \n-%22\n+v)\n )%0A%09%09\n-%7D%0A%09%09s.WriteString(strconv.Itoa(v))%0A%09%7D%0A%09s.WriteByte('%5D')%0A%09s.WriteByte('%5Cn')\n+%09continue%0A%09%09%7D%0A%09%09%0A%09%09if i == len(lista) - 1%7B%0A%09%09%09s.WriteString(fmt.Sprintf(%22 %25d%22, v))%0A%09%09%7Delse%7B%0A%09%09%09s.WriteString(fmt.Sprintf(%22 %25d,%22, v))%0A%09%09%7D%0A%09%09%0A%09%7D\n %0A%0A%0A%09\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-04-05_23-42-09",
+            "content": "@@ -269,16 +269,35 @@\n te('%5D')%0A\n+%09s.WriteByte('%5Cn')%0A\n %0A%0A%09retur\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-05_23-43-40",
+            "content": "@@ -1253,16 +1253,18 @@\n mt.Print\n+ln\n (tostr(v\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-05_23-46-02",
+            "content": "@@ -1249,26 +1249,24 @@\n %09%09%09fmt.Print\n-ln\n (tostr(vet))\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-05_23-46-26",
+            "content": "@@ -332,237 +332,26 @@\n  %7B%0A%09\n-lista := vet%0A%09var s strings.Builder%0A%09s.WriteByte('%5B')%0A%0A%09for i := len(lista) - 1; i %3E= 0; i-- %7B%0A%09%09if i  %3C len(lista) - 1%7B%0A%09%09%09s.WriteString(%22, %22)%0A%09%09%7D%0A%09%09s.WriteString(strconv.Itoa(lista%5Bi%5D))%0A%09%7D%0A%09s.WriteByte('%5D')%0A%0A%0A%09return s.String()\n+_ = vet%0A%09return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-05_23-49-27",
+            "content": "@@ -634,202 +634,15 @@\n  %7B%0A%09\n-lista := vet%0A%09contador := 1%0A%0A%09for i := 0; i %3C len(lista)/2; i++%7B%0A%09%09var backup int%0A%09%09backup = lista%5Bi%5D%0A%09%09lista%5Bi%5D = lista%5Blen(lista) - i - 1%5D%0A%09%09lista%5Blen(lista) - i - 1%5D = backup%0A%09%09contador++%0A%09%7D%0A\n+_ = vet\n %0A%7D%0A%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-04-06_00-06-34",
+            "content": "@@ -895,63 +895,15 @@\n  %7B%0A%09\n-var soma int%0A%09%0A%09for _, v := range vet %7B%0A%09%09soma += v%0A%09%7D%0A\n+_ = vet\n %0A%09re\n@@ -911,17 +911,13 @@\n urn \n-soma\n+0\n %0A%7D%0A%0A\n-%0A\n // m\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-04-06_00-08-44",
+            "content": "@@ -67,124 +67,8 @@\n %0A)%0A%0A\n-func multRec(vet %5B%5Dint, i int) int %7B%0A%09%09if i == 0%7B%0A%09%09%09return vet%5B0%5D%0A%09%09%7D %0A%09%09%0A%09%09return vet%5Bi%5D * multRec(vet, i - 1)%0A%7D%0A%0A\n func\n@@ -904,16 +904,17 @@\n oma int%0A\n+%09\n %0A%09for _,\n@@ -1028,31 +1028,26 @@\n int) int %7B%0A%09\n-lista :\n+_ \n = vet%0A%09retur\n@@ -1052,38 +1052,9 @@\n urn \n-multRec(lista, len(lista) - 1)\n+0\n %0A%7D%0A%0A\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-04-06_00-18-32",
+            "content": "@@ -1151,40 +1151,20 @@\n  %7B%0A%09\n-if(len(vet) == 0)%7B%0A%09%09return 0%0A%09%7D\n+lista := vet\n %0A%09re\n@@ -1180,20 +1180,24 @@\n Rec(\n-vet\n+lista\n , len(\n-vet\n+lista\n ) - \n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-06_00-19-59",
+            "content": "@@ -1175,17 +1175,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%09ret\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-04-06_00-20-34",
+            "content": "@@ -67,148 +67,8 @@\n %0A)%0A%0A\n-func minRec(vet %5B%5Dint, i int) int %7B%0A%09if i == 0%7B%0A%09%09return 0%0A%09%7D%0A%0A%09menor := minRec(vet, i - 1)%0A%0A%09if vet%5Bi%5D %3C menor%7B%0A%09%09return i%0A%09%7D%0A%09return i%0A%7D%0A%0A\n func\n@@ -1434,40 +1434,25 @@\n  %7B%0A%09\n-return minRec(vet, len(vet) - 1)\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-04-06_00-34-51",
+            "content": "@@ -198,21 +198,17 @@\n %09return \n-menor\n+i\n %0A%7D%0A%0Afunc\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-04-06_00-35-15",
+            "content": "@@ -1577,43 +1577,8 @@\n t %7B%0A\n-%09if len(vet) == 0 %7B%0A%09%09return -1%0A%09%7D%0A\n %09ret\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-04-06_00-35-46",
+            "content": "@@ -173,18 +173,13 @@\n %5D %3C \n-vet%5B\n menor\n-%5D\n %7B%0A%09%09\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-04-06_00-36-54",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc minRec(vet []int, i int) int {\n\tif i == 0{\n\t\treturn 0\n\t}\n\n\tmenor := minRec(vet, i - 1)\n\n\tif vet[i] < vet[menor]{\n\t\treturn i\n\t}\n\treturn menor\n}\n\nfunc multRec(vet []int, i int) int {\n\t\tif i == 0{\n\t\t\treturn vet[0]\n\t\t} \n\t\t\n\t\treturn vet[i] * multRec(vet, i - 1)\n}\n\nfunc tostr(vet []int) string {\n\tlista := vet\n\tvar s strings.Builder\n\ts.WriteByte('[')\n\n\tfor i,v := range lista {\n\t\tif i > 0{\n\t\t\ts.WriteString(\", \")\n\t\t}\n\t\ts.WriteString(strconv.Itoa(v))\n\t}\n\ts.WriteByte(']')\n\n\n\treturn s.String()\n}\n\nfunc tostrrev(vet []int) string {\n\tlista := vet\n\tvar s strings.Builder\n\ts.WriteByte('[')\n\n\tfor i := len(lista) - 1; i >= 0; i-- {\n\t\tif i  < len(lista) - 1{\n\t\t\ts.WriteString(\", \")\n\t\t}\n\t\ts.WriteString(strconv.Itoa(lista[i]))\n\t}\n\ts.WriteByte(']')\n\n\n\treturn s.String()\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\tlista := vet\n\tcontador := 1\n\n\tfor i := 0; i < len(lista)/2; i++{\n\t\tvar backup int\n\t\tbackup = lista[i]\n\t\tlista[i] = lista[len(lista) - i - 1]\n\t\tlista[len(lista) - i - 1] = backup\n\t\tcontador++\n\t}\n\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\tvar soma int\n\n\tfor _, v := range vet {\n\t\tsoma += v\n\t}\n\n\treturn soma\n}\n\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\tif(len(vet) == 0){\n\t\treturn 1\n\t}\n\treturn multRec(vet, len(vet) - 1)\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\tif len(vet) == 0 {\n\t\treturn -1\n\t}\n\treturn minRec(vet, len(vet) - 1)\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "149"
+        }
+    ]
+}

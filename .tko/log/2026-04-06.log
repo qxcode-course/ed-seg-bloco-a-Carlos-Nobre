@@ -1,0 +1,12 @@
+2026-04-06 00:06:34, EXEC, v:1, k:ed@treinando, mode:FULL, rate:50, size:118
+2026-04-06 00:08:44, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:124
+2026-04-06 00:18:32, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:132
+2026-04-06 00:19:59, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:134
+2026-04-06 00:20:34, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:134
+2026-04-06 00:34:51, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:146
+2026-04-06 00:35:15, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:146
+2026-04-06 00:35:46, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:149
+2026-04-06 00:36:54, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:149
+2026-04-06 00:38:10, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-06 00:39:14, SELF, v:1, k:ed@treinando, self:1, rate:100, study:75, concept:1
+2026-04-06 00:39:45, MOVE, v:1, k:ed@resto, mode:DOWN
