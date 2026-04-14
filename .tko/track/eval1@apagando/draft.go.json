@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_16-39-00",
+            "content": "@@ -520,18 +520,16 @@\n %7D%0A%0A%09for \n-_,\n cara := \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_16-39-36",
+            "content": "@@ -478,24 +478,31 @@\n ertores %7B%0A%09%09\n+delete(\n filaFinal%5Bde\n@@ -502,17 +502,18 @@\n inal\n-%5B\n+, \n desertor\n %5D = \n@@ -512,17 +512,9 @@\n rtor\n-%5D = false\n+)\n ;%0A%09%7D\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_16-40-05",
+            "content": "@@ -64,14 +64,12 @@\n res \n-= 0,0 \n+int;\n %0A%0A%09f\n@@ -88,24 +88,25 @@\n %22, &tamFila)\n+;\n %0A%0A%09fila := m\n@@ -124,16 +124,17 @@\n tamFila)\n+;\n %0A%0A%09for i\n@@ -182,24 +182,25 @@\n %22, &fila%5Bi%5D)\n+;\n %0A%09%7D%0A%0A%09fmt.Sc\n@@ -341,16 +341,17 @@\n ores%5Bi%5D)\n+;\n %0A%09%7D%0A%0A%09fi\n@@ -379,16 +379,17 @@\n nt%5Dbool)\n+;\n %0A%0A%09for _\n@@ -435,16 +435,17 @@\n %5D = true\n+;\n %0A%09%7D%0A%0A%09fo\n@@ -509,16 +509,17 @@\n  = false\n+;\n %0A%09%7D%0A%0A%09fo\n@@ -591,16 +591,17 @@\n %22, cara)\n+;\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_16-43-55",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar tamFila,qntDesertores = 0,0 \n\n\tfmt.Scanf(\"%d\", &tamFila)\n\n\tfila := make([]int, tamFila)\n\n\tfor i := 0; i < tamFila; i++ {\n\t\tfmt.Scanf(\"%d\", &fila[i])\n\t}\n\n\tfmt.Scanf(\"%d\", &qntDesertores);\n\tdesertores := make([]int, qntDesertores);\n\n\tfor i := 0; i < qntDesertores; i++ {\n\t\tfmt.Scanf(\"%d\", &desertores[i])\n\t}\n\n\tfilaFinal := make(map[int]bool)\n\n\tfor _, cara := range fila {\n\t\tfilaFinal[cara] = true\n\t}\n\n\tfor _, desertor := range desertores {\n\t\tfilaFinal[desertor] = false\n\t}\n\n\tfor _,cara := range fila{\n\t\tif filaFinal[cara] {\n\t\t\tfmt.Printf(\"%d \", cara)\n\t\t}\n\t}\n\t\n\n}\n",
+            "lines": "38"
+        }
+    ]
+}

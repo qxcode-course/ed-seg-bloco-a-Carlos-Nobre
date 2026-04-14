@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_16-09-32",
+            "content": "@@ -422,24 +422,25 @@\n  i := 1; i %3C\n+=\n  qntFigurinh\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-10-43",
+            "content": "@@ -778,71 +778,8 @@\n   %7D%0A\n-    //imprime as figurinhas repetidas ou N se n%C3%A3o tiver nenhuma\n %0A   \n@@ -1057,176 +1057,8 @@\n  %7D%0A%0A\n-    //imprime as figurinhas que faltam ou N se n%C3%A3o tiver nenhuma%0A%0A    for i,v := range album %7B%0A        if v == false%7B%0A            fmt.Printf(%22%25d %22, i)%0A        %7D%0A    %7D%0A%0A\n %0A%0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-12-25",
+            "content": "@@ -1185,39 +1185,8 @@\n uma%0A\n-    faltando := make(%5B%5Dint, 0);\n %0A   \n@@ -1238,283 +1238,8 @@\n se%7B%0A\n-            faltando = append(faltando, i)%0A        %7D%0A    %7D%0A    %0A    if len(faltando) == 0%7B%0A        fmt.Println(%22N%22)%0A    %7D else %7B%0A        for i,v := range faltando%7B%0A            if i == len(faltando) - 1 %7B%0A                fmt.Println(v)%0A                continue;%0A            %7D%0A\n     \n@@ -1256,33 +1256,33 @@\n t.Printf(%22%25d %22, \n-v\n+i\n )%0A        %7D%0A    \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-13_16-14-39",
+            "content": "@@ -412,33 +412,33 @@\n se%0A    for i := \n-0\n+1\n ; i %3C qntFigurin\n@@ -1181,21 +1181,16 @@\n nenhuma%0A\n-    %0A\n     falt\n@@ -1320,24 +1320,28 @@\n     %7D%0A    %7D%0A\n+    \n %0A    if len(\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-13_16-16-05",
+            "content": "@@ -205,18 +205,16 @@\n s);%0A    \n-//\n repetida\n@@ -234,16 +234,16 @@\n nt, 0);%0A\n+\n %0A    //p\n@@ -502,81 +502,8 @@\n   %7D%0A\n-%0A    for i,v := range album %7B%0A        fmt.Printf(%22%25d %25t%5Cn%22, i, v)%0A    %7D%0A%0A\n     \n@@ -600,18 +600,16 @@\n ida%0A    \n-/*\n for _,v \n@@ -769,27 +769,24 @@\n      %7D%0A    %7D\n-*/%0A\n %0A    //impri\n@@ -842,18 +842,16 @@\n uma%0A    \n-/*\n if len(r\n@@ -1114,18 +1114,16 @@\n %7D%0A%0A    %7D\n-*/\n %0A%0A    //\n@@ -1194,10 +1194,8 @@\n     \n-/*\n falt\n@@ -1588,15 +1588,13 @@\n   %7D%0A\n+\n     %7D\n-*/\n %0A%0A%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-13_16-19-50",
+            "content": "@@ -468,13 +468,27 @@\n bum%5B\n-i + 1\n+minhasFigurinhas%5Bi%5D\n %5D = \n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-04-13_16-20-44",
+            "content": "@@ -487,16 +487,87 @@\n %0A    %7D%0A%0A\n+    for i,v := range album %7B%0A        fmt.Printf(%22%25d %25t%5Cn%22, i, v)%0A    %7D%0A\n %0A    //v\n@@ -657,24 +657,26 @@\n epetida%0A    \n+/*\n for _,v := r\n@@ -832,24 +832,26 @@\n      %7D%0A    %7D\n+*/\n %0A%0A    //impr\n@@ -904,24 +904,26 @@\n nenhuma%0A    \n+/*\n if len(repet\n@@ -1178,24 +1178,26 @@\n     %7D%0A%0A    %7D\n+*/\n %0A%0A    //impr\n@@ -1256,24 +1256,26 @@\n ma%0A    %0A    \n+/*\n faltando := \n@@ -1656,16 +1656,21 @@\n       %7D%0A\n-\n     %7D\n+*/%0A%0A%0A\n %0A%7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-04-13_16-21-22",
+            "content": "@@ -201,24 +201,26 @@\n inhas);%0A    \n+//\n repetidas :=\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-13_16-21-37",
+            "content": "@@ -427,24 +427,29 @@\n  0; i %3C \n-tamAlbum\n+qntFigurinhas\n ; i++ %7B%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-13_16-22-16",
+            "content": "@@ -1316,277 +1316,8 @@\n    %7D\n-%0A    //ordena as figurinhas que faltam%0A    for i := 0; i %3C len(faltando); i++ %7B%0A        for j := i + 1; j %3C len(faltando); j++ %7B%0A            if faltando%5Bi%5D %3E faltando%5Bj%5D %7B%0A                faltando%5Bi%5D, faltando%5Bj%5D = faltando%5Bj%5D, faltando%5Bi%5D%0A            %7D%0A        %7D%0A    %7D\n %0A%0A  \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-13_16-28-04",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var tamAlbum, qntFigurinhas int;\n    fmt.Scan(&tamAlbum, &qntFigurinhas);\n    \n    album := make(map[int]bool);\n    minhasFigurinhas := make([]int, qntFigurinhas);\n    repetidas := make([]int, 0);\n\n    //preenche as figurinhas do user    \n    for i := 0; i < qntFigurinhas; i++ {\n        fmt.Scan(&minhasFigurinhas[i])\n    }\n    //preenche os indices do album com false\n    for i := 0; i < tamAlbum; i++ {\n        album[i + 1] = false;\n    }\n\n\n    //verifica se no album tem a figurinha, se tiver false vira true, se tiver true vira repetida\n    for _,v := range minhasFigurinhas{\n        if album[v] == false {\n            album[v] = true;\n        } else {\n            repetidas = append(repetidas, v);\n        }\n    }\n\n    //imprime as figurinhas repetidas ou N se n\u00e3o tiver nenhuma\n    if len(repetidas) == 0{\n        fmt.Println(\"N\")\n    } else {\n        for i,v := range repetidas{\n            if i == len(repetidas) - 1 {\n                fmt.Println(v)\n                continue;\n            }\n            fmt.Printf(\"%d \", v)\n            \n        }\n\n    }\n\n    //imprime as figurinhas que faltam ou N se n\u00e3o tiver nenhuma\n    \n    faltando := make([]int, 0);\n    for i,v := range album {\n        if v == false{\n            faltando = append(faltando, i)\n        }\n    }\n    //ordena as figurinhas que faltam\n    for i := 0; i < len(faltando); i++ {\n        for j := i + 1; j < len(faltando); j++ {\n            if faltando[i] > faltando[j] {\n                faltando[i], faltando[j] = faltando[j], faltando[i]\n            }\n        }\n    }\n\n    if len(faltando) == 0{\n        fmt.Println(\"N\")\n    } else {\n        for i,v := range faltando{\n            if i == len(faltando) - 1 {\n                fmt.Println(v)\n                continue;\n            }\n            fmt.Printf(\"%d \", v)\n        }\n    }\n}\n",
+            "lines": "73"
+        }
+    ]
+}
