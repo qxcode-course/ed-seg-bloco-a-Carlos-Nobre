@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_08-51-38",
+            "content": "@@ -583,66 +583,8 @@\n Pos%0A\n-%09// Verifica se a posi%C3%A7%C3%A3o atual %C3%A9 v%C3%A1lida e se %C3%A9 o destino%0A\n %09if \n@@ -602,24 +602,22 @@\n irinto, \n-startPos\n+comeco\n ) %7C%7C !in\n@@ -680,24 +680,22 @@\n birinto,\n-startPos\n+comeco\n ,' ')%7B%0A%09\n@@ -744,36 +744,32 @@\n birinto%5B\n-startPos.l%5D%5BstartPos\n+comeco.l%5D%5Bcomeco\n .c%5D = '.\n@@ -793,209 +793,294 @@\n %7D%0A%0A%09\n-labirinto%5BstartPos.l%5D%5BstartPos.c%5D = '*' // marca posicao ja visitada%0A%0A%09vizinhos := getNeig(startPos)%0A%0A%09for _, vizinho := range vizinhos %7B%0A%09%09if search(labirinto, vizinho, final) %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A\n+cima := Pos%7Bcomeco.l - 1, comeco.c%7D%0A%09baixo := Pos%7Bcomeco.l + 1, comeco.c%7D%0A%09esquerda := Pos%7Bcomeco.l, comeco.c - 1%7D%0A%09direita := Pos%7Bcomeco.l, comeco.c + 1%7D%0A%0A%09search(labirinto,cima,final)%0A%09search(labirinto,baixo,final)%0A%09search(labirinto,esquerda,final)%0A%09search(labirinto,direita,final)%09%0A%09\n %0A%09re\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-14_09-03-38",
+            "content": "@@ -649,20 +649,25 @@\n !inside(\n-grid\n+labirinto\n , startP\n@@ -715,25 +715,24 @@\n rn false%0A%09%7D%0A\n-%0A\n %09if !match(g\n@@ -730,20 +730,25 @@\n  !match(\n-grid\n+labirinto\n ,startPo\n@@ -777,39 +777,40 @@\n %0A%09%7D%0A\n-%0A\n %09if \n-startPos == endPos%7B%0A%09%09grid\n+comeco == final%7B%0A%09%09labirinto\n %5Bsta\n@@ -855,20 +855,25 @@\n ue%0A%09%7D%0A%0A%09\n-grid\n+labirinto\n %5BstartPo\n@@ -1005,20 +1005,25 @@\n  search(\n-grid\n+labirinto\n , vizinh\n@@ -1025,22 +1025,21 @@\n izinho, \n-endPos\n+final\n ) %7B%0A%09%09%09r\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-04-14_09-07-45",
+            "content": "@@ -532,14 +532,34 @@\n  %7B%0A%09\n-_,_,_ \n+labirinto, comeco, final :\n = gr\n@@ -680,20 +680,24 @@\n ide(\n-grid, endPos\n+labirinto, final\n ) %7B%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-04-14_09-08-11",
+            "content": "@@ -995,63 +995,8 @@\n ) %7B%0A\n-%09%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.' // marca caminho%0A\n %09%09%09r\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-04-14_09-09-29",
+            "content": "@@ -1073,65 +1073,8 @@\n %09%7D%0A%0A\n-%09grid%5BstartPos.l%5D%5BstartPos.c%5D = ' ' // desmarca posicao%0A%0A\n %09ret\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-04-14_09-11-44",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}\n}\n\nfunc inside(grid [][]rune, p Pos) bool {\n\treturn !(p.l < 0 || p.l >= len(grid) || p.c < 0 || p.c >= len(grid[0]))\n}\n\nfunc match(grid [][]rune, p Pos, value rune) bool {\n\treturn inside(grid, p) && grid[p.l][p.c] == value\n}\n\n// Fun\u00e7\u00e3o recursiva que tenta encontrar o caminho do in\u00edcio ao fim\nfunc search(grid [][]rune, startPos, endPos Pos) bool {\n\t_,_,_ = grid, startPos, endPos\n\t// Verifica se a posi\u00e7\u00e3o atual \u00e9 v\u00e1lida e se \u00e9 o destino\n\tif !inside(grid, startPos) || !inside(grid, endPos) {\n\t\treturn false\n\t}\n\n\tif !match(grid,startPos,' '){\n\t\treturn false\n\t}\n\n\tif startPos == endPos{\n\t\tgrid[startPos.l][startPos.c] = '.'\n\t\treturn true\n\t}\n\n\tgrid[startPos.l][startPos.c] = '*' // marca posicao ja visitada\n\n\tvizinhos := getNeig(startPos)\n\n\tfor _, vizinho := range vizinhos {\n\t\tif search(grid, vizinho, endPos) {\n\t\t\tgrid[startPos.l][startPos.c] = '.' // marca caminho\n\t\t\treturn true\n\t\t}\n\t}\n\n\tgrid[startPos.l][startPos.c] = ' ' // desmarca posicao\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(grid, startPos, endPos)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "93"
+        }
+    ]
+}
