@@ -1,0 +1,34 @@
+2026-04-28 16:05:34, MOVE, v:1, k:ed@vetbuild, mode:DOWN
+2026-04-28 16:05:34, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-28 16:05:34, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-28 16:05:34, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-28 16:05:34, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-28 16:27:23, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-28 16:27:24, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:130, fail:COMP
+2026-04-28 16:35:18, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-28 16:35:18, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:33, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:35, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:35, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:37, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:37, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:37, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:37, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:38, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:38, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:38, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:38, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:51, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:35:52, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-04-28 16:35:53, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-28 16:35:54, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:35, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:35, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP
+2026-04-28 16:36:36, EXEC, v:1, k:ed@vetbuild, mode:FULL, fail:COMP

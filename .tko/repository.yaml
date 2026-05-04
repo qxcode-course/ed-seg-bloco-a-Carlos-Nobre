@@ -21,8 +21,7 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded:
-- ed@rec
+expanded: []
 flags:
   inbox: all
   panel: help
@@ -30,4 +29,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
+selected: ed@basic
+selected_index: 0
