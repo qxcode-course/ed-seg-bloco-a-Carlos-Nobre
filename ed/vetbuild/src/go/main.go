@@ -72,7 +72,43 @@ func (v *Vector) Show() string {
 
 	s.WriteRune('[')
 
+	for i := 0; i < v.size; i++ {
+		if i == v.size-1 {
+			s.WriteString(strconv.Itoa(v.data[i]))
+		} else {
+			s.WriteString(strconv.Itoa(v.data[i]))
+			s.WriteRune(',')
+			s.WriteRune(' ')
+		}
+	}
 
+	s.WriteRune(']')
+
+	return s.String()
+}
+
+func (v *Vector) At(index int) (string, error) {
+	if index <= v.size-1 {
+		return strconv.Itoa(v.data[index]), nil
+	}
+	return "", fmt.Errorf("index out of range")
+}
+
+func (v *Vector) Set(index int, value int) error {
+	if index > v.size-1 {
+		return fmt.Errorf("index out of range")
+	} else {
+		v.data[index] = value
+	}
+
+	return nil
+}
+
+func (v *Vector) Clear() {
+	for i := 0; i < v.size; i++ {
+		v.data[i] = 0
+	}
+	v.size = 0
 }
 
 func main() {
@@ -105,7 +141,7 @@ func main() {
 				v.PushBack(value)
 			}
 		case "show":
-			// fmt.Println(v)
+			fmt.Println(v.Show())
 		case "status":
 			fmt.Println(v.Status())
 		case "pop":
@@ -138,25 +174,25 @@ func main() {
 			// 	fmt.Println("false")
 			// }
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		case "capacity":
 			// fmt.Println(v.Capacity())
 		case "get":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, err := v.At(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(value)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, err := v.At(index)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(value)
+			}
 		case "set":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Set(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
-			//
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Set(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
+
 		case "reserve":
 			// newCapacity, _ := strconv.Atoi(parts[1])
 			// v.Reserve(newCapacity)
