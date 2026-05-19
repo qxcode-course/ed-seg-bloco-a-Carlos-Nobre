@@ -111,6 +111,44 @@ func (v *Vector) Clear() {
 	v.size = 0
 }
 
+func (v *Vector) Reserve(newCap int) {
+	if newCap > v.capacity {
+		newData := make([]int, newCap)
+
+		for i := 0; i < newCap; i++ {
+			if i <= v.size-1 {
+				newData[i] = v.data[i]
+			} else {
+				newData[i] = 0
+			}
+
+		}
+
+		v.capacity = newCap
+		v.data = newData
+	}
+}
+
+func (v *Vector) PopBack() error {
+	if v.size == 0 {
+		return fmt.Errorf("vector is empty")
+	}
+
+	v.data[v.size-1] = 0
+	v.size -= 1
+
+	return nil
+}
+
+func (v *Vector) Insert(indice int, valor int) error {
+	//usa a funcao pushback para adicionar no final do vetor o valor solicitado, foi usado essa funcao por ja tratar alguns erros
+	v.PushBack(valor)
+
+	//agora so precisa colocar o ultimo valor no indice certo e empurrar os outros valores pra depois dele
+
+	return nil
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -145,17 +183,17 @@ func main() {
 		case "status":
 			fmt.Println(v.Status())
 		case "pop":
-			// err := v.PopBack()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			err := v.PopBack()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "insert":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Insert(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Insert(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "erase":
 			// index, _ := strconv.Atoi(parts[1])
 			// err := v.Erase(index)
@@ -194,8 +232,8 @@ func main() {
 			}
 
 		case "reserve":
-			// newCapacity, _ := strconv.Atoi(parts[1])
-			// v.Reserve(newCapacity)
+			newCapacity, _ := strconv.Atoi(parts[1])
+			v.Reserve(newCapacity)
 		case "slice":
 			// start, _ := strconv.Atoi(parts[1])
 			// end, _ := strconv.Atoi(parts[2])
