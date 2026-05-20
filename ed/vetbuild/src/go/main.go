@@ -145,10 +145,96 @@ func (v *Vector) Insert(indice int, valor int) error {
 	v.PushBack(valor)
 
 	//agora so precisa colocar o ultimo valor no indice certo e empurrar os outros valores pra depois dele
+	var backup int
+	for i := 0; i < v.size; i++ {
+		if i == indice {
+			backup = v.data[indice]
+			v.data[indice] = v.data[v.size-1]
+		}
+		if i > indice {
+			valor = v.data[i]
+			v.data[i] = backup
+			backup = valor
+		}
+
+	}
 
 	return nil
 }
 
+func (v *Vector) Erase(indice int) error {
+	if indice > v.size-1 {
+		return fmt.Errorf("index out of range")
+	}
+
+	if indice == v.size-1 {
+		v.data[indice] = 0
+		v.size -= 1
+	} else {
+		v.data[indice] = 0
+		for i := indice + 1; i < v.size-1; i++ {
+			v.data[i-1] = v.data[i]
+		}
+		v.data[v.size-2] = v.data[v.size-1]
+		v.size -= 1
+
+	}
+
+	return nil
+}
+
+func (v *Vector) IndexOf(valor int) int {
+	for i := 0; i < v.size-1; i++ {
+		if v.data[i] == valor {
+			return i
+		}
+	}
+	return -1
+}
+
+func (v *Vector) Contains(valor int) bool {
+	for i := 0; i < v.size-1; i++ {
+		if v.data[i] == valor {
+			return true
+		}
+	}
+
+	return false
+}
+func (v *Vector) Slice(start int, end int) *Vector {
+	if v.size == 0 {
+		return &Vector{}
+	}
+
+	start = ((start % v.size) + v.size) % v.size
+	end = ((end % v.size) + v.size) % v.size
+
+	if start < end {
+		s := v.data[start:end]
+
+		return &Vector{
+			data:     s[:len(s):len(s)],
+			size:     len(s),
+			capacity: len(s),
+		}
+	}
+
+	if start == end {
+		return &Vector{
+			data:     []int{},
+			size:     0,
+			capacity: 0,
+		}
+	}
+
+	temp := append(v.data[start:], v.data[:end]...)
+
+	return &Vector{
+		data:     temp,
+		size:     len(temp),
+		capacity: len(temp),
+	}
+}
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -195,22 +281,22 @@ func main() {
 				fmt.Println(err)
 			}
 		case "erase":
-			// index, _ := strconv.Atoi(parts[1])
-			// err := v.Erase(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			err := v.Erase(index)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "clear":
 			v.Clear()
 		case "capacity":
@@ -235,10 +321,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			slice.Show()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
