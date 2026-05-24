@@ -18,14 +18,13 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@vector
+expanded: []
 flags:
-  inbox: inbox
-  panel: skills
-  show_panel: 'true'
+  inbox: all
+  panel: graph
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 4
+selected: ed@dfs
+selected_index: 8

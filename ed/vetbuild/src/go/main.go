@@ -202,32 +202,42 @@ func (v *Vector) Contains(valor int) bool {
 	return false
 }
 func (v *Vector) Slice(start int, end int) *Vector {
+
 	if v.size == 0 {
-		return &Vector{}
+		return NewVector(0)
 	}
 
 	start = ((start % v.size) + v.size) % v.size
 	end = ((end % v.size) + v.size) % v.size
 
 	if start < end {
-		s := v.data[start:end]
+
+		temp := make([]int, end-start)
+
+		for i := start; i < end; i++ {
+			temp[i-start] = v.data[i]
+		}
 
 		return &Vector{
-			data:     s[:len(s):len(s)],
-			size:     len(s),
-			capacity: len(s),
+			data:     temp,
+			size:     len(temp),
+			capacity: len(temp),
 		}
 	}
 
 	if start == end {
-		return &Vector{
-			data:     []int{},
-			size:     0,
-			capacity: 0,
-		}
+		return NewVector(0)
 	}
 
-	temp := append(v.data[start:], v.data[:end]...)
+	temp := []int{}
+
+	for i := start; i < v.size; i++ {
+		temp = append(temp, v.data[i])
+	}
+
+	for i := 0; i < end; i++ {
+		temp = append(temp, v.data[i])
+	}
 
 	return &Vector{
 		data:     temp,
@@ -324,7 +334,7 @@ func main() {
 			start, _ := strconv.Atoi(parts[1])
 			end, _ := strconv.Atoi(parts[2])
 			slice := v.Slice(start, end)
-			slice.Show()
+			fmt.Println(slice.Show())
 		default:
 			fmt.Println("fail: comando invalido")
 		}

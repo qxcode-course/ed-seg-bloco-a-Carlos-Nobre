@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_22-37-40",
+            "content": "@@ -125,21 +125,22 @@\n %7B%0A%09vet, \n-valor\n+indice\n  := slic\n@@ -152,25 +152,13 @@\n lue%0A\n-%09baixo := 0%0A%09alto\n+%0A%09mid\n  := \n@@ -170,209 +170,58 @@\n et) \n-- 1\n+/ 2\n %0A%0A%09for \n-baixo %3C= alto %7B%0A%09%09meio := (baixo + alto) / 2%0A%09%09chute := vet%5Bmeio%5D%0A%0A%09%09if chute == valor %7B%0A%09%09%09return true, meio%0A%09%09%7D%0A%09%09if chute %3E valor %7B%0A%09%09%09alto = meio - 1%0A%09%09%7D else %7B%0A%09%09%09baixo = meio + 1%0A%09%09%7D%0A%09%7D\n+true%7B%0A%09%09if vet%5Bmid%5D == indice %7B%0A%0A%09%09%7D%0A%09%7D%0A\n %0A%0A%09r\n@@ -235,17 +235,16 @@\n alse, 0%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-23_22-53-20",
+            "content": "@@ -184,20 +184,8 @@\n  - 1\n-%0A%09chute := 0\n %0A%0A%09f\n@@ -240,16 +240,17 @@\n %09%09chute \n+:\n = vet%5Bme\n@@ -395,21 +395,17 @@\n  false, \n-chute\n+0\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-23_22-54-41",
+            "content": "@@ -182,20 +182,21 @@\n t) - 1%0A%09\n-meio\n+chute\n  := 0%0A%0A%09\n@@ -252,17 +252,16 @@\n %09%09chute \n-:\n = vet%5Bme\n@@ -406,20 +406,21 @@\n  false, \n-meio\n+chute\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-23_22-57-24",
+            "content": "@@ -185,20 +185,8 @@\n - 1%0A\n-%09chute := 0%0A\n %09mei\n@@ -191,17 +191,16 @@\n eio := 0\n- \n %0A%0A%09for b\n@@ -221,16 +221,17 @@\n %0A%09%09meio \n+:\n = (baixo\n@@ -251,16 +251,17 @@\n %09%09chute \n+:\n = vet%5Bme\n@@ -394,28 +394,9 @@\n %0A%09%7D%0A\n-%09if chute %3E valor%7B\n %0A\n-%09\n %09ret\n@@ -409,37 +409,13 @@\n lse,\n+ \n meio\n-%0A%09%7D%0A%0A%09return false, chute\n %0A%0A%7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-23_23-01-27",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tvet, valor := slice, value\n\tbaixo := 0\n\talto := len(vet) - 1\n\tchute := 0\n\tmeio := 0 \n\n\tfor baixo <= alto {\n\t\tmeio = (baixo + alto) / 2\n\t\tchute = vet[meio]\n\n\t\tif chute == valor {\n\t\t\treturn true, meio\n\t\t}\n\t\tif chute > valor {\n\t\t\talto = meio - 1\n\t\t} else {\n\t\t\tbaixo = meio + 1\n\t\t}\n\t}\n\tif chute > valor{\n\t\treturn false,meio\n\t}\n\n\treturn false, chute\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "56"
+        }
+    ]
+}
