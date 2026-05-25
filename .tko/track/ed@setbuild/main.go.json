@@ -2,8 +2,63 @@
     "patches": [
         {
             "label": "2026-05-23_23-02-17",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\t// v := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\t\t// v = NewSet(value)\n\t\tcase \"insert\":\n\t\t\t// for _, part := range parts[1:] {\n\t\t\t// \tvalue, _ := strconv.Atoi(part)\n\t\t\t// }\n\t\tcase \"show\":\n\t\tcase \"erase\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\tcase \"contains\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "content": "@@ -47,242 +47,15 @@\n %22str\n-conv%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09data int%0A%09next *Node%0A%7D%0A%0Atype Set struct %7B%0A%09head     *Node%0A%09size     int%0A%09capacity int%0A%7D%0A%0Afunc newSet(capacity int) *Set %7B%0A%09return &Set%7B%0A%09%09head:     nil,%0A%09%09size:     0,%0A%09%09capacity: capacity,%0A%09%7D%0A%7D\n+ings%22%0A)\n %0A%0Afu\n@@ -133,14 +133,17 @@\n )%0A%0A%09\n+// \n v := \n-n\n+N\n ewSe\n@@ -376,16 +376,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -417,16 +417,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n v = NewS\n",
             "lines": "45"
+        },
+        {
+            "label": "2026-05-25_16-06-31",
+            "content": "@@ -283,14 +283,8 @@\n %0A%7D%0A%0A\n-func%0A%0A\n func\n@@ -642,17 +642,17 @@\n %0A%09%09%09v = \n-n\n+N\n ewSet(va\n@@ -773,17 +773,16 @@\n %22show%22:%0A\n-%0A\n %09%09case %22\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-25_16-09-14",
+            "content": "@@ -287,990 +287,8 @@\n func\n- (s *Set) show() %7B%0A%09fmt.Print(%22%5B%22)%0A%0A%09atual := s.head%0A%0A%09for atual != nil %7B%0A%09%09fmt.Print(atual.data)%0A%0A%09%09if atual.next != nil %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%0A%09%09atual = atual.next%0A%09%7D%0A%0A%09fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc (s *Set) contains(value int) bool%7B%0A%09current := s.head%0A%09for current != nil%7B%0A%09%09if current.data == value%7B%0A%09%09%09return true %0A%09%09%7D%0A%09%09current = current.next%0A%09%7D%0A%09return false%0A%7D%0Afunc (s *Set) Insert(value int) %7B%0A%09//verifica se o valor esta presente na lista%0A%09if s.contains(value) %7B%0A%09%09fmt.Println(%22fail: valor repetido%22)%0A%09%09return%0A%09%7D%0A%09//aumenta o tamanho da lista caso necess%C3%A1rio%0A%09if s.size %3E= s.capacity %7B%0A%09%09if s.capacity == 0 %7B%0A%09%09%09s.capacity = 1%0A%09%09%7D else %7B%0A%09%09%09s.capacity *= 2%0A%09%09%7D%0A%09%7D%0A%0A%09new := &Node%7B%0A%09%09data: value,%0A%09%09next: nil,%0A%09%7D%0A%0A%09if s.head == nil %7C%7C value %3C s.head.data %7B%0A%09%09new.next = s.head%0A%09%09s.head = new%0A%09%09s.size++%0A%09%09return%0A%09%7D%0A%0A%09current := s.head%0A%0A%09for current.next != nil && current.next.data %3C value %7B%0A%09%09current = current.next%0A%09%7D%0A%0A%09new.next = current.next%0A%09current.next = new%0A%0A%09s.size++%0A%7D\n %0A%0Afu\n@@ -682,16 +682,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -721,16 +721,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -763,28 +763,11 @@\n %0A%09%09%09\n-%09v.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-25_16-34-29",
+            "content": "@@ -514,17 +514,16 @@\n nt) bool\n- \n %7B%0A%09curre\n@@ -550,25 +550,24 @@\n rrent != nil\n- \n %7B%0A%09%09if curre\n@@ -578,25 +578,24 @@\n ata == value\n- \n %7B%0A%09%09%09return \n@@ -598,16 +598,17 @@\n urn true\n+ \n %0A%09%09%7D%0A%09%09c\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-05-25_16-34-36",
+            "content": "@@ -1778,19 +1778,8 @@\n w%22:%0A\n-%09%09%09v.show()\n %0A%09%09c\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-05-25_16-35-05",
+            "content": "@@ -304,60 +304,24 @@\n w() \n-string %7B%0A%09var str strings.Builder%0A%09str.WriteRune('%5B'\n+%7B%0A%09fmt.Print(%22%5B%22\n )%0A%0A%09\n@@ -363,36 +363,17 @@\n %7B%0A%09%09\n-str.WriteString(strconv.Itoa\n+fmt.Print\n (atu\n@@ -380,17 +380,16 @@\n al.data)\n-)\n %0A%0A%09%09if a\n@@ -421,17 +421,16 @@\n .Print(%22\n-,\n  %22)%0A%09%09%7D%0A\n@@ -460,47 +460,23 @@\n %7D%0A%0A%09\n-str.WriteRune('%5D')%0A%0A%09return str.String(\n+fmt.Println(%22%5D%22\n )%0A%7D%0A\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-05-25_16-43-19",
+            "content": "@@ -1862,28 +1862,16 @@\n %0A%09%09%09\n-fmt.Println(\n v.show()\n )%0A%09%09\n@@ -1866,17 +1866,16 @@\n v.show()\n-)\n %0A%09%09case \n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-05-25_16-43-44",
+            "content": "@@ -466,31 +466,25 @@\n il %7B%0A%09%09%09\n-str.WriteString\n+fmt.Print\n (%22, %22)%0A%09\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-05-25_16-44-36",
+            "content": "@@ -843,18 +843,16 @@\n ue) %7B%0A%09%09\n-//\n fmt.Prin\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-05-25_16-44-50",
+            "content": "@@ -1963,24 +1963,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2009,100 +2009,8 @@\n 1%5D)%0A\n-%09%09%09if v.contains(value) %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-05-25_16-47-10",
+            "content": "@@ -1362,463 +1362,8 @@\n %0A%7D%0A%0A\n-func (s *Set) erase(value int) error %7B%0A%09if s.head == nil %7B%0A%09%09return fmt.Errorf(%22value not found%22)%0A%09%7D%0A%0A%09if s.head.data == value %7B%0A%09%09s.head = s.head.next%0A%09%09s.size--%0A%09%09return nil%0A%09%7D%0A%0A%09current := s.head.next%0A%09before := s.head%0A%0A%09for current.next != nil %7B%0A%09%09if current.data == value %7B%0A%09%09%09before.next = current.next%0A%09%09%09current.next = nil%0A%09%09%09return nil%0A%09%09%7D else %7B%0A%09%09%09current = current.next%0A%09%09%09before = before.next%0A%09%09%7D%0A%09%7D%0A%0A%09return fmt.Errorf(%22value not found%22)%0A%7D%0A%0A\n func\n@@ -1372,16 +1372,16 @@\n ain() %7B%0A\n+\n %09var lin\n@@ -1903,24 +1903,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -1949,78 +1949,8 @@\n 1%5D)%0A\n-%09%09%09err := v.erase(value)%0A%09%09%09if err != nil %7B%0A%09%09%09%09fmt.Println(err)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-05-25_17-06-05",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tdata int\n\tnext *Node\n}\n\ntype Set struct {\n\thead     *Node\n\tsize     int\n\tcapacity int\n}\n\nfunc newSet(capacity int) *Set {\n\treturn &Set{\n\t\thead:     nil,\n\t\tsize:     0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (s *Set) show() string {\n\tvar str strings.Builder\n\tstr.WriteRune('[')\n\n\tatual := s.head\n\n\tfor atual != nil {\n\t\tstr.WriteString(strconv.Itoa(atual.data))\n\n\t\tif atual.next != nil {\n\t\t\tstr.WriteString(\", \")\n\t\t}\n\n\t\tatual = atual.next\n\t}\n\n\tstr.WriteRune(']')\n\n\treturn str.String()\n}\n\nfunc (s *Set) contains(value int) bool {\n\tcurrent := s.head\n\tfor current != nil {\n\t\tif current.data == value {\n\t\t\treturn true\n\t\t}\n\t\tcurrent = current.next\n\t}\n\treturn false\n}\nfunc (s *Set) Insert(value int) {\n\t//verifica se o valor esta presente na lista\n\tif s.contains(value) {\n\t\t//fmt.Println(\"fail: valor repetido\")\n\t\treturn\n\t}\n\t//aumenta o tamanho da lista caso necess\u00e1rio\n\tif s.size >= s.capacity {\n\t\tif s.capacity == 0 {\n\t\t\ts.capacity = 1\n\t\t} else {\n\t\t\ts.capacity *= 2\n\t\t}\n\t}\n\n\tnew := &Node{\n\t\tdata: value,\n\t\tnext: nil,\n\t}\n\n\tif s.head == nil || value < s.head.data {\n\t\tnew.next = s.head\n\t\ts.head = new\n\t\ts.size++\n\t\treturn\n\t}\n\n\tcurrent := s.head\n\n\tfor current.next != nil && current.next.data < value {\n\t\tcurrent = current.next\n\t}\n\n\tnew.next = current.next\n\tcurrent.next = new\n\n\ts.size++\n}\n\nfunc (s *Set) erase(value int) error {\n\tif s.head == nil {\n\t\treturn fmt.Errorf(\"value not found\")\n\t}\n\n\tif s.head.data == value {\n\t\ts.head = s.head.next\n\t\ts.size--\n\t\treturn nil\n\t}\n\n\tcurrent := s.head.next\n\tbefore := s.head\n\n\tfor current.next != nil {\n\t\tif current.data == value {\n\t\t\tbefore.next = current.next\n\t\t\tcurrent.next = nil\n\t\t\treturn nil\n\t\t} else {\n\t\t\tcurrent = current.next\n\t\t\tbefore = before.next\n\t\t}\n\t}\n\n\treturn fmt.Errorf(\"value not found\")\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := newSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = newSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(v.show())\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\terr := v.erase(value)\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tif v.contains(value) {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "174"
         }
     ]
 }
