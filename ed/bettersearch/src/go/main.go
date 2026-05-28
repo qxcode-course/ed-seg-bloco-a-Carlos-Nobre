@@ -13,7 +13,7 @@ func BetterSearch(slice []int, value int) (bool, int) {
 	baixo := 0
 	alto := len(vet) - 1
 	chute := 0
-	meio := 0 
+	meio := 0
 
 	for baixo <= alto {
 		meio = (baixo + alto) / 2
@@ -28,8 +28,8 @@ func BetterSearch(slice []int, value int) (bool, int) {
 			baixo = meio + 1
 		}
 	}
-	if chute > valor{
-		return false,meio
+	if chute > valor {
+		return false, meio
 	}
 
 	return false, chute

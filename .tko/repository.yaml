@@ -19,13 +19,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
+- ed@rec
 flags:
   inbox: all
-  panel: graph
+  panel: help
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@multiset
-selected_index: 8
+selected: ed@enesimo
+selected_index: 13
