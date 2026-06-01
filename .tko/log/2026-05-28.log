@@ -28,3 +28,19 @@
 2026-05-28 13:34:09, MOVE, v:1, k:ed@enesimo, mode:PICK
 2026-05-28 13:34:10, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0
 2026-05-28 13:34:18, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-05-28 13:48:51, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-28 13:48:51, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
+2026-05-28 13:48:53, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
+2026-05-28 13:48:58, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
+2026-05-28 13:49:00, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-05-28 13:49:38, SELF, v:1, k:ed@labirinto, self:1, rate:100, study:45
+2026-05-28 13:50:24, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-05-28 13:50:25, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0
+2026-05-28 13:53:26, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-05-28 13:58:33, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-05-28 14:03:25, MOVE, v:1, k:ed@enesimo, mode:EDIT
+2026-05-28 14:03:46, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:38
+2026-05-28 14:04:18, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0
+2026-05-28 14:05:33, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:12, size:38
+2026-05-28 14:05:37, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:12
+2026-05-28 14:06:02, MOVE, v:1, k:ed@enesimo, mode:BACK
