@@ -13,19 +13,107 @@ type Pair struct {
 	Two int
 }
 
+func Abs(x int) int {
+	if x >= 0 {
+		return x
+	} else {
+		return -x
+	}
+}
+
+func Bubble(v []int) {
+	for i := 0; i < len(v); i++ {
+		for j := i + 1; j < len(v); j++ {
+			if Abs(v[i]) > Abs(v[j]) {
+				backup := v[i]
+				v[i] = v[j]
+				v[j] = backup
+			}
+		}
+	}
+}
+
+func cont(vet []int) int {
+
+	cont := 1
+
+	for i := 0; i < len(vet)-1; i++ {
+		if Abs(vet[i]) != Abs(vet[i+1]) {
+			cont++
+		}
+	}
+	return cont
+}
+
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len(vet) == 0 {
+		return nil
+	}
+
+	Bubble(vet)
+
+	var resp []Pair
+
+	valor := Abs(vet[0])
+	qtd := 1
+
+	for i := 1; i < len(vet); i++ {
+		if Abs(vet[i]) == valor {
+			qtd++
+		} else {
+			resp = append(resp, Pair{valor, qtd})
+			valor = Abs(vet[i])
+			qtd = 1
+		}
+	}
+
+	resp = append(resp, Pair{valor, qtd})
+
+	return resp
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+	var resp []Pair
+
+	for i := 0; i < len(vet); {
+		qtd := 1
+
+		for i+qtd < len(vet) && Abs(vet[i]) == Abs(vet[i+qtd]) {
+			qtd++
+		}
+
+		resp = append(resp, Pair{vet[i], qtd})
+		i += qtd
+	}
+	return resp
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	var mapa []int
+
+	for i := 0; i < len(vet); i++ {
+		if vet[i] < 0 {
+			mapa = append(mapa, 0)
+			continue
+		}
+
+		temVizinhoNegativo := false
+
+		if i > 0 && vet[i-1] < 0 {
+			temVizinhoNegativo = true
+		}
+
+		if i < len(vet)-1 && vet[i+1] < 0 {
+			temVizinhoNegativo = true
+		}
+
+		if temVizinhoNegativo {
+			mapa = append(mapa, 1)
+		} else {
+			mapa = append(mapa, 0)
+		}
+	}
+	return mapa
 }
 
 func alone(vet []int) []int {

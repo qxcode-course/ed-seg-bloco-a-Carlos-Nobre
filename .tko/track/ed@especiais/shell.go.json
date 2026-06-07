@@ -2,8 +2,78 @@
     "patches": [
         {
             "label": "2026-05-20_08-27-47",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pair struct {\n\tOne int\n\tTwo int\n}\n\nfunc occurr(vet []int) []Pair {\n\t_ = vet\n\treturn nil\n}\n\nfunc teams(vet []int) []Pair {\n\t_ = vet\n\treturn nil\n}\n\nfunc mnext(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc alone(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc couple(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc hasSubseq(vet []int, seq []int, pos int) bool {\n\t_ = vet\n\t_ = seq\n\t_ = pos\n\treturn false\n}\n\nfunc subseq(vet []int, seq []int) int {\n\t_ = vet\n\t_ = seq\n\treturn -1\n}\n\nfunc erase(vet []int, posList []int) []int {\n\t_ = vet\n\t_ = posList\n\treturn nil\n}\n\nfunc clear(vet []int, value int) []int {\n\t_ = vet\n\t_ = value\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"occurr\":\n\t\t\tprintSlice(occurr(str2vet(args[1])))\n\t\tcase \"teams\":\n\t\t\tprintSlice(teams(str2vet(args[1])))\n\t\tcase \"mnext\":\n\t\t\tprintSlice(mnext(str2vet(args[1])))\n\t\tcase \"alone\":\n\t\t\tprintSlice(alone(str2vet(args[1])))\n\t\tcase \"erase\":\n\t\t\tprintSlice(erase(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"clear\":\n\t\t\tval, _ := strconv.Atoi(args[2])\n\t\t\tprintSlice(clear(str2vet(args[1]), val))\n\t\tcase \"subseq\":\n\t\t\tfmt.Println(subseq(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"couple\":\n\t\t\tfmt.Println(couple(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"Invalid command\")\n\t\t}\n\t}\n}\n\n// Fun\u00e7\u00f5es auxiliares\n\nfunc str2vet(str string) []int {\n\tif str == \"[]\" {\n\t\treturn nil\n\t}\n\tstr = str[1 : len(str)-1]\n\tparts := strings.Split(str, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tnum, _ := strconv.Atoi(strings.TrimSpace(part))\n\t\tvet = append(vet, num)\n\t}\n\treturn vet\n}\n\nfunc printSlice[T any](vet []T) {\n\tfmt.Print(\"[\")\n\tfor i, x := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(x)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc (p Pair) String() string {\n\treturn fmt.Sprintf(\"(%v, %v)\", p.One, p.Two)\n}\n",
+            "content": "@@ -1,9 +1,8 @@\n- \n package \n",
             "lines": "132"
+        },
+        {
+            "label": "2026-06-06_22-38-30",
+            "content": "@@ -1,8 +1,9 @@\n+ \n package \n@@ -113,813 +113,55 @@\n unc \n-Abs(x int) int %7B%0A%09if x %3E= 0 %7B%0A%09%09return x%0A%09%7D else %7B%0A%09%09return -x%0A%09%7D%0A%7D%0A%0Afunc Bubble(v %5B%5Dint) %7B%0A%09for i := 0; i %3C len(v); i++ %7B%0A%09%09for j := i + 1; j %3C len(v); j++ %7B%0A%09%09%09if Abs(v%5Bi%5D) %3E Abs(v%5Bj%5D) %7B%0A%09%09%09%09backup := v%5Bi%5D%0A%09%09%09%09v%5Bi%5D = v%5Bj%5D%0A%09%09%09%09v%5Bj%5D = backup%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0Afunc cont(vet %5B%5Dint) int %7B%0A%0A%09cont := 0%0A%09backup := 0%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09if backup != vet%5Bi%5D %7B%0A%09%09%09cont++%0A%09%09%7D%0A%09%7D%0A%09return cont%0A%7D%0A%0Afunc occurr(vet %5B%5Dint) %5B%5DPair %7B%0A%09Bubble(vet)%0A%09pair := make(%5B%5DPair, cont(vet))%0A%09cont := 0%0A%09contindice := 0%0A%09var actualy Pair%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09cont++%0A%09%09for j := 1 + i; j %3C len(vet); j++ %7B%0A%09%09%09if Abs(vet%5Bi%5D) == Abs(vet%5Bj%5D) %7B%0A%09%09%09%09cont++%0A%09%09%09%7D else %7B%0A%09%09%09%09actualy.One = Abs(vet%5Bi%5D)%0A%09%09%09%09actualy.Two = cont%0A%09%09%09%09pair%5Bcontindice%5D = actualy%0A%09%09%09%09i = i + cont%0A%09%09%09%09contindice++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09return pair\n+occurr(vet %5B%5Dint) %5B%5DPair %7B%0A%09_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-06-06_23-28-40",
+            "content": "@@ -404,16 +404,28 @@\n nt := 0%0A\n+%09backup := 0\n %0A%09for i \n@@ -442,18 +442,16 @@\n len(vet)\n--1\n ; i++ %7B%0A\n@@ -459,36 +459,24 @@\n %09if \n-Abs(vet%5Bi%5D) != Abs(\n+backup != \n vet%5Bi\n-+1%5D)\n+%5D\n  %7B%0A%09\n",
+            "lines": "184"
+        },
+        {
+            "label": "2026-06-06_23-30-58",
+            "content": "@@ -402,17 +402,17 @@\n cont := \n-1\n+0\n %0A%0A%09for i\n",
+            "lines": "184"
+        },
+        {
+            "label": "2026-06-06_23-32-21",
+            "content": "@@ -546,123 +546,161 @@\n  %7B%0A%09\n-if \n+Bubb\n le\n-n\n (vet)\n- == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09Bubble(vet)%0A%0A%09var resp %5B%5D\n+%0A%09pair := make(%5B%5DPair, cont(vet))%0A%09cont := 0%0A%09contindice := 0%0A%09var actualy \n Pair%0A%0A%09\n-val\n+f\n or \n+i \n := \n-Abs(vet%5B0%5D)%0A%09qtd := 1%0A%0A\n+0; i %3C len(vet); i++ %7B%0A%09%09cont++%0A%09\n %09for \n-i\n+j\n  := 1\n-; i\n+ + i; j\n  %3C l\n@@ -708,22 +708,23 @@\n n(vet); \n-i\n+j\n ++ %7B%0A\n+%09\n %09%09if Abs\n@@ -739,25 +739,34 @@\n  == \n-valor\n+Abs(vet%5Bj%5D)\n  %7B%0A%09%09%09\n-qtd\n+%09cont\n ++%0A\n+%09\n %09%09%7D \n@@ -779,126 +779,134 @@\n %0A%09%09%09\n-resp = append(resp, Pair%7Bvalor, qtd%7D)%0A%09%09%09valor = Abs(vet%5Bi%5D)%0A%09%09%09qtd = 1%0A%09%09%7D%0A%09%7D%0A%0A%09resp = append(resp, Pair%7Bvalor, qtd%7D)\n+%09actualy.One = Abs(vet%5Bi%5D)%0A%09%09%09%09actualy.Two = cont%0A%09%09%09%09pair%5Bcontindice%5D = actualy%0A%09%09%09%09i = i + cont%0A%09%09%09%09contindice++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%0A%09r\n@@ -915,12 +915,12 @@\n urn \n-resp\n+pair\n %0A%7D%0A%0A\n",
+            "lines": "184"
+        },
+        {
+            "label": "2026-06-06_23-34-43",
+            "content": "@@ -899,356 +899,27 @@\n  %7B%0A%09\n-var resp %5B%5DPair%0A%09actualy := 0%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09cont := 1%0A%09%09if vet%5Bi%5D == 0 %7B%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09actualy = vet%5Bi%5D%0A%09%09%7D%0A%0A%09%09if actualy == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09for j := i + 1; j %3C len(vet); j++ %7B%0A%09%09%09if Abs(actualy) == Abs(vet%5Bj%5D) %7B%0A%09%09%09%09cont++%0A%09%09%09%09vet%5Bj%5D = 0%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09resp = append(resp, Pair%7Bactualy, cont%7D)%0A%09%7D%0A%09return resp\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-06-06_23-56-32",
+            "content": "@@ -910,16 +910,30 @@\n p %5B%5DPair\n+%0A%09actualy := 0\n %0A%0A%09for i\n@@ -957,58 +957,185 @@\n t); \n-%7B%0A%09%09qtd := 1%0A%0A%09%09for i+qtd %3C len(vet) && Abs(vet%5Bi%5D\n+i++ %7B%0A%09%09cont := 1%0A%09%09if vet%5Bi%5D == 0 %7B%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09actualy = vet%5Bi%5D%0A%09%09%7D%0A%0A%09%09if actualy == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09for j := i + 1; j %3C len(vet); j++ %7B%0A%09%09%09if Abs(actualy\n ) ==\n@@ -1143,25 +1143,48 @@\n Abs(\n-i+qtd\n+vet%5Bj%5D\n ) %7B%0A%09%09%09\n-qtd++\n+%09cont++%0A%09%09%09%09vet%5Bj%5D = 0%0A%09%09%09%7D\n %0A%09%09%7D\n@@ -1216,32 +1216,23 @@\n air%7B\n-vet%5Bi%5D, qtd%7D)%0A%09%09i += qtd\n+actualy, cont%7D)\n %0A%09%7D%0A\n",
+            "lines": "209"
+        },
+        {
+            "label": "2026-06-07_00-03-21",
+            "content": "@@ -1002,18 +1002,13 @@\n Abs(\n-vet%5B\n i+qtd\n-%5D\n ) %7B%0A\n",
+            "lines": "197"
+        },
+        {
+            "label": "2026-06-07_00-05-05",
+            "content": "@@ -1132,231 +1132,15 @@\n  %7B%0A%09\n-var mapa %5B%5Dint%0A%0A%09for i := 0; i %3C len(vet) - 1; i++%7B%0A%09%09if vet%5Bi%5D %3C 0%7B%0A%09%09%09mapa = append(mapa, 0)%0A%09%09%7Delse%7B%0A%09%09%09if i == 0 && vet%5Bi + 1%5D %3C 0 %7C%7C i != 0 && (vet%5Bi + 1%5D %3C 0 %7C%7C vet%5Bi - 1%5D %3C 0) %7B%0A%09%09%09%09mapa = append(mapa, 1)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -1148,12 +1148,11 @@\n urn \n-mapa\n+nil\n %0A%7D%0A%0A\n",
+            "lines": "197"
+        },
+        {
+            "label": "2026-06-07_00-18-43",
+            "content": "@@ -1165,32 +1165,33 @@\n i %3C len(vet)\n--\n+ - \n 1; i++\n- \n %7B%0A%09%09if vet%5Bi\n@@ -1195,17 +1195,16 @@\n t%5Bi%5D %3C 0\n- \n %7B%0A%09%09%09map\n@@ -1222,30 +1222,28 @@\n mapa, 0)%0A%09%09%7D\n- \n else\n- \n %7B%0A%09%09%09if i ==\n@@ -1249,25 +1249,27 @@\n = 0 && vet%5Bi\n-+\n+ + \n 1%5D %3C 0 %7C%7C i \n@@ -1282,17 +1282,19 @@\n & (vet%5Bi\n-+\n+ + \n 1%5D %3C 0 %7C\n@@ -1300,17 +1300,19 @@\n %7C%7C vet%5Bi\n--\n+ - \n 1%5D %3C 0) \n",
+            "lines": "207"
+        },
+        {
+            "label": "2026-06-07_00-18-49",
+            "content": "@@ -1161,32 +1161,34 @@\n  0; i %3C len(vet)\n+-1\n ; i++ %7B%0A%09%09if vet\n@@ -1340,47 +1340,8 @@\n  1)%0A\n-%09%09%09%7D else %7B%0A%09%09%09%09mapa = append(mapa, 0)%0A\n %09%09%09%7D\n",
+            "lines": "207"
+        },
+        {
+            "label": "2026-06-07_00-20-44",
+            "content": "@@ -1161,34 +1161,32 @@\n  0; i %3C len(vet)\n--1\n ; i++ %7B%0A%09%09if vet\n",
+            "lines": "209"
+        },
+        {
+            "label": "2026-06-07_00-20-59",
+            "content": "@@ -1161,32 +1161,34 @@\n  0; i %3C len(vet)\n+-1\n ; i++ %7B%0A%09%09if vet\n@@ -1194,81 +1194,8 @@\n t%5Bi%5D\n- %3E 0 %7B%0A%09%09%09if i == 0 %7C%7C i == len(vet)-1 %7B%0A%09%09%09%09if i == 0 %7B%0A%09%09%09%09%09if vet%5Bi+1%5D\n  %3C 0\n@@ -1192,35 +1192,32 @@\n vet%5Bi%5D %3C 0 %7B%0A%09%09%09\n-%09%09\n-%09\n mapa = append(ma\n@@ -1212,38 +1212,35 @@\n  = append(mapa, \n-1\n+0\n )%0A\n-%09%09%09\n %09%09%7D else %7B%0A%09%09%09%09%09\n@@ -1241,200 +1241,48 @@\n %0A%09%09%09\n-%09%09%09mapa = append(mapa, 0)%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%0A%09%09%09%09if i == len(vet)-1 %7B%0A%09%09%09%09%09if\n+if i == 0 &&\n  vet%5Bi\n--\n++\n 1%5D %3C 0 \n-%7B%0A%09%09%09%09%09%09mapa = append(mapa, 1)%0A%09%09%09%09%09%7D else %7B%0A%09%09%09%09%09%09mapa = append(mapa, 0)%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%09%09%09%7D else %7B%0A%09%09%09%09if \n+%7C%7C i != 0 && (\n vet%5B\n@@ -1305,24 +1305,24 @@\n i-1%5D %3C 0\n+)\n  %7B%0A%09%09%09%09\n-%09\n mapa = a\n@@ -1339,17 +1339,16 @@\n , 1)%0A%09%09%09\n-%09\n %7D else %7B\n@@ -1348,17 +1348,16 @@\n  else %7B%0A\n-%09\n %09%09%09%09mapa\n@@ -1382,53 +1382,9 @@\n %0A%09%09%09\n-%09%7D%0A%09%09%09%7D%0A%0A%09%09%7D else %7B%0A%09%09%09mapa = append(mapa, 0)\n+%7D\n %0A%09%09%7D\n",
+            "lines": "209"
+        },
+        {
+            "label": "2026-06-07_00-27-10",
+            "content": "@@ -1188,23 +1188,99 @@\n f vet%5Bi%5D\n+ %3E 0 %7B%0A%09%09%09if i == 0 %7C%7C i == len(vet)-1 %7B%0A%09%09%09%09if i == 0 %7B%0A%09%09%09%09%09if vet%5Bi+1%5D\n  %3C 0 %7B%0A\n+%09%09%09\n %09%09%09mapa \n@@ -1298,151 +1298,242 @@\n pa, \n-0\n+1\n )%0A%09%09%09\n+%09%09\n-continue%0A%09%09%7D%0A%0A%09%09temVizinhoNegativo := false%0A%0A%09%09if i %3E 0 && vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09temVizinhoNegativo = true%0A%09%09%7D%0A%0A%09%09if i %3C len(vet)-1 &&\n+%7D else %7B%0A%09%09%09%09%09%09mapa = append(mapa, 0)%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%0A%09%09%09%09if i == len(vet)-1 %7B%0A%09%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09%09mapa = append(mapa, 1)%0A%09%09%09%09%09%7D else %7B%0A%09%09%09%09%09%09mapa = append(mapa, 0)%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%09%09%09%7D else %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7C%7C\n  vet%5Bi\n-+\n+-\n 1%5D %3C\n@@ -1544,65 +1544,48 @@\n %0A%09%09%09\n-temVizinhoNegativo = true%0A%09%09%7D%0A%0A%09%09if temVizinhoNegativo\n+%09%09mapa = append(mapa, 1)%0A%09%09%09%09%7D else\n  %7B%0A\n+%09%09\n %09%09%09m\n@@ -1603,18 +1603,30 @@\n d(mapa, \n-1)\n+0)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A\n %0A%09%09%7D els\n",
+            "lines": "228"
+        },
+        {
+            "label": "2026-06-07_00-29-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pair struct {\n\tOne int\n\tTwo int\n}\n\nfunc Abs(x int) int {\n\tif x >= 0 {\n\t\treturn x\n\t} else {\n\t\treturn -x\n\t}\n}\n\nfunc Bubble(v []int) {\n\tfor i := 0; i < len(v); i++ {\n\t\tfor j := i + 1; j < len(v); j++ {\n\t\t\tif Abs(v[i]) > Abs(v[j]) {\n\t\t\t\tbackup := v[i]\n\t\t\t\tv[i] = v[j]\n\t\t\t\tv[j] = backup\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc cont(vet []int) int {\n\n\tcont := 1\n\n\tfor i := 0; i < len(vet)-1; i++ {\n\t\tif Abs(vet[i]) != Abs(vet[i+1]) {\n\t\t\tcont++\n\t\t}\n\t}\n\treturn cont\n}\n\nfunc occurr(vet []int) []Pair {\n\tif len(vet) == 0 {\n\t\treturn nil\n\t}\n\n\tBubble(vet)\n\n\tvar resp []Pair\n\n\tvalor := Abs(vet[0])\n\tqtd := 1\n\n\tfor i := 1; i < len(vet); i++ {\n\t\tif Abs(vet[i]) == valor {\n\t\t\tqtd++\n\t\t} else {\n\t\t\tresp = append(resp, Pair{valor, qtd})\n\t\t\tvalor = Abs(vet[i])\n\t\t\tqtd = 1\n\t\t}\n\t}\n\n\tresp = append(resp, Pair{valor, qtd})\n\n\treturn resp\n}\n\nfunc teams(vet []int) []Pair {\n\tvar resp []Pair\n\n\tfor i := 0; i < len(vet); {\n\t\tqtd := 1\n\n\t\tfor i+qtd < len(vet) && Abs(vet[i]) == Abs(vet[i+qtd]) {\n\t\t\tqtd++\n\t\t}\n\n\t\tresp = append(resp, Pair{vet[i], qtd})\n\t\ti += qtd\n\t}\n\treturn resp\n}\n\nfunc mnext(vet []int) []int {\n\tvar mapa []int\n\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] < 0 {\n\t\t\tmapa = append(mapa, 0)\n\t\t\tcontinue\n\t\t}\n\n\t\ttemVizinhoNegativo := false\n\n\t\tif i > 0 && vet[i-1] < 0 {\n\t\t\ttemVizinhoNegativo = true\n\t\t}\n\n\t\tif i < len(vet)-1 && vet[i+1] < 0 {\n\t\t\ttemVizinhoNegativo = true\n\t\t}\n\n\t\tif temVizinhoNegativo {\n\t\t\tmapa = append(mapa, 1)\n\t\t} else {\n\t\t\tmapa = append(mapa, 0)\n\t\t}\n\t}\n\treturn mapa\n}\n\nfunc alone(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc couple(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc hasSubseq(vet []int, seq []int, pos int) bool {\n\t_ = vet\n\t_ = seq\n\t_ = pos\n\treturn false\n}\n\nfunc subseq(vet []int, seq []int) int {\n\t_ = vet\n\t_ = seq\n\treturn -1\n}\n\nfunc erase(vet []int, posList []int) []int {\n\t_ = vet\n\t_ = posList\n\treturn nil\n}\n\nfunc clear(vet []int, value int) []int {\n\t_ = vet\n\t_ = value\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"occurr\":\n\t\t\tprintSlice(occurr(str2vet(args[1])))\n\t\tcase \"teams\":\n\t\t\tprintSlice(teams(str2vet(args[1])))\n\t\tcase \"mnext\":\n\t\t\tprintSlice(mnext(str2vet(args[1])))\n\t\tcase \"alone\":\n\t\t\tprintSlice(alone(str2vet(args[1])))\n\t\tcase \"erase\":\n\t\t\tprintSlice(erase(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"clear\":\n\t\t\tval, _ := strconv.Atoi(args[2])\n\t\t\tprintSlice(clear(str2vet(args[1]), val))\n\t\tcase \"subseq\":\n\t\t\tfmt.Println(subseq(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"couple\":\n\t\t\tfmt.Println(couple(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"Invalid command\")\n\t\t}\n\t}\n}\n\n// Fun\u00e7\u00f5es auxiliares\n\nfunc str2vet(str string) []int {\n\tif str == \"[]\" {\n\t\treturn nil\n\t}\n\tstr = str[1 : len(str)-1]\n\tparts := strings.Split(str, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tnum, _ := strconv.Atoi(strings.TrimSpace(part))\n\t\tvet = append(vet, num)\n\t}\n\treturn vet\n}\n\nfunc printSlice[T any](vet []T) {\n\tfmt.Print(\"[\")\n\tfor i, x := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(x)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc (p Pair) String() string {\n\treturn fmt.Sprintf(\"(%v, %v)\", p.One, p.Two)\n}\n",
+            "lines": "220"
         }
     ]
 }
