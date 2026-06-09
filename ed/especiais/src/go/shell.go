@@ -117,13 +117,55 @@ func mnext(vet []int) []int {
 }
 
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	var list []int
+
+	for i := 0; i < len(vet); i++ {
+		if vet[i] < 0 {
+			list = append(list, 0)
+			continue
+		}
+
+		temVizinhoNegativo := false
+
+		if i > 0 && vet[i-1] < 0 {
+			temVizinhoNegativo = true
+		}
+
+		if i < len(vet)-1 && vet[i+1] < 0 {
+			temVizinhoNegativo = true
+		}
+		if temVizinhoNegativo {
+			list = append(list, 0)
+		} else {
+			list = append(list, 1)
+		}
+	}
+	return list
 }
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+	var homens []int
+	var mulheres []int
+	count := 0
+
+	for i := 0; i < len(vet); i++ {
+		if vet[i] < 0 {
+			mulheres = append(mulheres, vet[i])
+		} else {
+			homens = append(homens, vet[i])
+		}
+	}
+
+	for _, h := range homens {
+		for j, m := range mulheres {
+			if Abs(m) == h {
+				count++
+				mulheres[j] = 0
+				break
+			}
+		}
+	}
+	return count
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
@@ -136,19 +178,70 @@ func hasSubseq(vet []int, seq []int, pos int) bool {
 func subseq(vet []int, seq []int) int {
 	_ = vet
 	_ = seq
+
+	if len(seq) > len(vet) {
+		return -1
+	}
+
+	if len(seq) == 0 {
+		return -1
+	}
+
+	for i := 0; i <= len(vet)-len(seq); i++ {
+		flag := true
+
+		for j := 0; j < len(seq); j++ {
+			if vet[i+j] != seq[j] {
+				flag = false
+				break
+			}
+		}
+
+		if flag {
+			return i
+		}
+	}
+
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
 	_ = vet
-	_ = posList
-	return nil
+	var finalList []int
+	for i := 0; i < len(posList); i++ {
+		for j := 0; j < len(vet); j++ {
+			if posList[i] == j {
+				vet[j] = 0
+				break
+			}
+		}
+	}
+
+	for _, v := range vet {
+		if v == 0 {
+			continue
+		} else {
+			finalList = append(finalList, v)
+		}
+	}
+	return finalList
+
 }
 
 func clear(vet []int, value int) []int {
 	_ = vet
 	_ = value
-	return nil
+	var listFinal []int
+
+	for i := 0; i < len(vet); i++ {
+		if vet[i] == value {
+			continue
+		} else {
+			listFinal = append(listFinal, vet[i])
+		}
+	}
+
+	return listFinal
 }
 
 func main() {
