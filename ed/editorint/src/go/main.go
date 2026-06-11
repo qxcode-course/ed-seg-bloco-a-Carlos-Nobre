@@ -63,7 +63,15 @@ func (e *Editor) KeyUp() {
 	if e.line == e.lines.Front() {
 		return
 	} else {
-		
+		col := e.line.Value.IndexOf(e.cursor)
+
+		e.line = e.line.Prev()
+
+		e.cursor = e.line.Value.Front()
+
+		for i := 0; i < col && e.cursor != e.line.Value.End(); i++ {
+			e.cursor = e.cursor.Next()
+		}
 	}
 }
 
@@ -71,8 +79,15 @@ func (e *Editor) KeyDown() {
 	if e.line.Next() == e.lines.End() {
 		return
 	} else {
+		col := e.line.Value.IndexOf(e.cursor)
+
 		e.line = e.line.Next()
+
 		e.cursor = e.line.Value.Front()
+
+		for i := 0; i < col && e.cursor != e.line.Value.End(); i++ {
+			e.cursor = e.cursor.Next()
+		}
 	}
 }
 
