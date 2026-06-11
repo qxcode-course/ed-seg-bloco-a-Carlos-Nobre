@@ -1,0 +1,20 @@
+2026-06-11 00:14:47, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-11 00:14:50, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-11 00:14:53, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-11 00:15:52, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:25:12, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:33:01, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:34:44, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:47:47, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:51:51, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:52:47, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 00:56:05, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:00:58, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:09:18, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:23:54, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:25:06, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:29:13, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:34:08, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:35:47, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-11 01:42:05, SELF, v:1, k:ed@editorint, self:1, study:101, concept:1
+2026-06-11 01:42:27, SELF, v:1, k:ed@editorint, self:1, rate:90, study:101, concept:1

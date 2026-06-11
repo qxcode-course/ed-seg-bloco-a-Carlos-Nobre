@@ -1,0 +1,44 @@
+2026-06-10 14:09:55, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-10 14:09:58, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-10 14:10:05, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-10 14:19:41, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-10 14:19:44, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-10 14:20:06, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-10 14:20:07, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-10 14:20:11, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-10 14:20:11, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-10 14:20:20, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-10 14:20:36, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-10 14:21:20, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-10 14:21:25, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-10 14:22:00, MOVE, v:1, k:ed@editorint, mode:DOWN
+2026-06-10 14:22:08, MOVE, v:1, k:ed@editorint, mode:DOWN
+2026-06-10 14:22:44, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-10 14:22:47, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
+2026-06-10 14:24:17, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-06-10 14:27:15, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-06-10 14:32:36, MOVE, v:1, k:ed@prin_list1, mode:DOWN
+2026-06-10 14:33:42, MOVE, v:1, k:ed@prin_list1, mode:PICK
+2026-06-10 14:33:43, EXEC, v:1, k:ed@prin_list1, mode:FULL, size:172, fail:COMP
+2026-06-10 14:34:54, EXEC, v:1, k:ed@prin_list1, mode:FULL, size:172, fail:COMP
+2026-06-10 14:34:55, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:34:55, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:34:55, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:34:55, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:34:56, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:34:56, EXEC, v:1, k:ed@prin_list1, mode:FULL, fail:COMP
+2026-06-10 14:32:36, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-10 14:32:36, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-10 14:32:36, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-10 14:35:17, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-10 14:32:36, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-10 15:08:01, MOVE, v:1, k:ed@lista_d1, mode:DOWN
+2026-06-10 15:08:03, MOVE, v:1, k:ed@lista_d2, mode:DOWN
+2026-06-10 15:09:02, MOVE, v:1, k:ed@lista_d3, mode:DOWN
+2026-06-10 15:09:02, MOVE, v:1, k:ed@lista_d3, mode:PICK
+2026-06-10 15:09:03, EXEC, v:1, k:ed@lista_d3, mode:FULL, rate:0, size:109
+2026-06-10 15:09:05, MOVE, v:1, k:ed@lista_d3, mode:BACK
+2026-06-10 15:09:07, MOVE, v:1, k:ed@lista_d4, mode:DOWN
+2026-06-10 15:09:09, MOVE, v:1, k:ed@prin_list2, mode:DOWN
+2026-06-10 15:09:10, MOVE, v:1, k:ed@editor, mode:DOWN
+2026-06-10 15:09:11, MOVE, v:1, k:ed@controlz, mode:DOWN

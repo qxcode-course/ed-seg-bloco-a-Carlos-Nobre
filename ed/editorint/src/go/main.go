@@ -32,6 +32,18 @@ func (e *Editor) KeyLeft() {
 }
 
 func (e *Editor) KeyEnter() {
+	newLine := NewList[rune]()
+
+	for e.cursor != e.line.Value.End() {
+		next := e.cursor.Next()
+
+		newLine.Insert(newLine.End(), e.cursor.Value)
+		e.line.Value.Erase(e.cursor)
+		e.cursor = next
+	}
+
+	e.line = e.lines.Insert(e.line.Next(), newLine)
+	e.cursor = e.line.Value.Front()
 }
 
 func (e *Editor) KeyRight() {
@@ -41,22 +53,79 @@ func (e *Editor) KeyRight() {
 	}
 
 	//estamos no final da linha
-	/*if e.line != e.lines.End() {
+	if e.line.Next() != e.lines.End() {
 		e.line = e.line.Next()
 		e.cursor = e.line.Value.Front()
-	}*/
+	}
 }
 
 func (e *Editor) KeyUp() {
+	if e.line == e.lines.Front() {
+		return
+	} else {
+		
+	}
 }
 
 func (e *Editor) KeyDown() {
+	if e.line.Next() == e.lines.End() {
+		return
+	} else {
+		e.line = e.line.Next()
+		e.cursor = e.line.Value.Front()
+	}
 }
 
 func (e *Editor) KeyBackspace() {
+	if e.cursor != e.line.Value.Front() {
+		e.cursor = e.line.Value.Erase(e.cursor.Prev())
+		return
+	}
+
+	if e.line == e.lines.Front() {
+		return
+	}
+
+	prevLine := e.line.Prev()
+	cursorPos := prevLine.Value.End()
+
+	for it := e.line.Value.Front(); it != e.line.Value.End(); {
+		next := it.Next()
+
+		prevLine.Value.Insert(prevLine.Value.End(), it.Value)
+
+		e.line.Value.Erase(it)
+
+		it = next
+	}
+
+	e.lines.Erase(e.line)
+	e.line = prevLine
+	e.cursor = cursorPos
 }
 
 func (e *Editor) KeyDelete() {
+	if e.cursor != e.line.Value.End() {
+		e.cursor = e.line.Value.Erase(e.cursor)
+	}
+
+	if e.line.Next() == e.lines.End() {
+		return
+	}
+
+	nextLine := e.line.Next()
+
+	for it := nextLine.Value.Front(); it != nextLine.Value.End(); {
+		next := it.Next()
+
+		e.line.Value.Insert(e.line.Value.End(), it.Value)
+
+		nextLine.Value.Erase(it)
+
+		it = next
+	}
+
+	e.lines.Erase(nextLine)
 }
 
 func main() {
