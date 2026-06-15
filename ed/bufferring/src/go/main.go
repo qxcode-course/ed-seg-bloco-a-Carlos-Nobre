@@ -82,13 +82,42 @@ func (buf *Deque) PushFront(value int) {
 
 func (buf *Deque) PopFront() error {
 	if buf.size == 0 {
-		return fmt.Errorf("nao tem nada")
+		return fmt.Errorf("fail: buffer vazio")
 	}
 
 	buf.front = (buf.front + 1) % buf.capacity
 
 	buf.size--
 	return nil
+}
+
+func (buf *Deque) PopBack() error {
+	if buf.size == 0 {
+		return fmt.Errorf("fail: buffer vazio")
+	}
+
+	buf.size--
+
+	return nil
+}
+
+func (buf *Deque) Clear() {
+	buf.size = 0
+	buf.front = 0
+}
+
+func (buf *Deque) Front() (int, error) {
+
+	return buf.front, nil
+}
+
+func (buf *Deque) Back() (int, error) {
+	back := ((buf.size + buf.front) % buf.capacity) - 1
+
+	if back < 0 {
+		back = 0
+	}
+	return back, nil
 }
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -127,27 +156,27 @@ func main() {
 				buf.PushFront(num)
 			}
 		case "pop_back":
-			// if err := buf.PopBack(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopBack(); err != nil {
+				fmt.Println(err)
+			}
 		case "pop_front":
 			if err := buf.PopFront(); err != nil {
 				fmt.Println(err)
 			}
 		case "front":
-			// if val, err := buf.Front(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Front(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "back":
-			// if val, err := buf.Back(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Back(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "clear":
-			// buf.Clear()
+			buf.Clear()
 		case "end":
 			return
 		default:
