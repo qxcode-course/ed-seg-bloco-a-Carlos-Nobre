@@ -42,8 +42,76 @@ func (l *LList) insertBefore(mark *Node, value int) {
 	n.next = mark
 	mark.prev.next = n
 	mark.prev = n
+	l.size++
 }
 
+func equals(firstList *LList, secondList *LList) bool {
+	if firstList.size != secondList.size {
+		return false
+	}
+
+	for nodeOne, nodeTwo := firstList.root.next, secondList.root.next; nodeOne != firstList.root && nodeTwo != secondList.root; nodeOne, nodeTwo = nodeOne.next, nodeTwo.next {
+		if nodeOne.Value != nodeTwo.Value {
+			return false
+		}
+	}
+
+	return true
+}
+
+func addsorted(lista *LList, value int) {
+	for node := lista.root.next; node != lista.root; node = node.next {
+		if node.Value > value {
+			lista.insertBefore(node, value)
+			return
+		}
+	}
+	lista.PushBack(value)
+}
+
+func reverse(lista *LList) {
+	if lista.size <= 1 {
+		return
+	}
+
+	for node := lista.root; ; {
+		node.next, node.prev = node.prev, node.next
+
+		node = node.prev
+
+		if node == lista.root {
+			break
+		}
+	}
+}
+
+func merge(lista1 *LList, lista2 *LList) *LList {
+	listMerged := NewLList()
+
+	nodeA := lista1.root.next
+	nodeB := lista2.root.next
+
+	for nodeA != lista1.root && nodeB != lista2.root {
+		if nodeA.Value <= nodeB.Value {
+			listMerged.PushBack(nodeA.Value)
+			nodeA = nodeA.next
+		} else {
+			listMerged.PushBack(nodeB.Value)
+			nodeB = nodeB.next
+		}
+
+	}
+	for nodeA != nodeA.root {
+		listMerged.PushBack(nodeA.Value)
+		nodeA = nodeA.next
+	}
+
+	for nodeB != nodeB.root {
+		listMerged.PushBack(nodeB.Value)
+		nodeB = nodeB.next
+	}
+	return listMerged
+}
 
 func str2list(serial string) *LList {
 	serial = serial[1 : len(serial)-1]
@@ -77,33 +145,42 @@ func main() {
 
 		switch cmd {
 		case "compare":
-			// lla := str2list(args[1])
-			// llb := str2list(args[2])
-			// if equals(lla, llb) {
-			// 	fmt.Println("iguais")
-			// } else {
-			// 	fmt.Println("diferentes")
-			// }
+			lla := str2list(args[1])
+			llb := str2list(args[2])
+			if equals(lla, llb) {
+				fmt.Println("iguais")
+			} else {
+				fmt.Println("diferentes")
+			}
 		case "addsorted":
-			// lla := NewLList()
-			// for i := 1; i < len(args); i++ {
-			// 	value, _ := strconv.Atoi(args[i])
-			// 	addsorted(lla, value)
-			// }
-			// fmt.Println(lla)
+			lla := NewLList()
+			for i := 1; i < len(args); i++ {
+				value, _ := strconv.Atoi(args[i])
+				addsorted(lla, value)
+			}
+			fmt.Println(lla)
 		case "reverse":
-			// lla := str2list(args[1])
-			// reverse(lla)
-			// fmt.Println(lla)
+			lla := str2list(args[1])
+			reverse(lla)
+			fmt.Println(lla)
 		case "merge":
-			// lla := str2list(args[1])
-			// llb := str2list(args[2])
-			// merged := merge(lla, llb)
-			// fmt.Println(merged)
+			lla := str2list(args[1])
+			llb := str2list(args[2])
+			merged := merge(lla, llb)
+			fmt.Println(merged)
 		case "end":
 			return
 		default:
 			fmt.Println("fail: comando invalido")
 		}
 	}
+}
+
+func (l *LList) String() string {
+	values := []string{}
+
+	for node := l.root.next; node != l.root; node = node.next {
+		values = append(values, strconv.Itoa(node.Value))
+	}
+	return "[" + strings.Join(values, ", ") + "]"
 }

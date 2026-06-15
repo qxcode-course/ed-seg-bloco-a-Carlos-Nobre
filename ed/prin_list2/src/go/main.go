@@ -3,21 +3,49 @@ package main
 import (
 	"container/list"
 	"fmt"
+	"strings"
 )
 
 // mostra a lista com o elemento sword destacado
 func ToStr(l *list.List, sword *list.Element) string {
-	return ""
+	var sb strings.Builder
+	sb.WriteString("[")
+
+	for node := l.Front(); node != nil; node = node.Next() {
+		sb.WriteString(" ")
+		if node == sword {
+			value := node.Value.(int)
+			if value < 0 {
+				sb.WriteString("<")
+				sb.WriteString(fmt.Sprint(node.Value))
+			} else {
+				sb.WriteString(fmt.Sprint(node.Value))
+				sb.WriteString(">")
+			}
+		} else {
+			sb.WriteString(fmt.Sprint(node.Value))
+		}
+	}
+
+	sb.WriteString(" ]")
+	return sb.String()
 }
 
 // move para frente na lista circular
 func Next(l *list.List, it *list.Element) *list.Element {
-	return nil
+	if it.Next() == nil {
+		return l.Front()
+	}
+
+	return it.Next()
 }
 
 // move para tras na lista circular
 func Prev(l *list.List, it *list.Element) *list.Element {
-	return l.Front()
+	if it.Prev() == nil {
+		return l.Back()
+	}
+	return it.Prev()
 }
 
 func main() {

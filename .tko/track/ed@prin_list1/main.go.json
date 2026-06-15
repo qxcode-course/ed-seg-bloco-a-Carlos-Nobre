@@ -2,8 +2,58 @@
     "patches": [
         {
             "label": "2026-06-10_14-33-43",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\treturn \"\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\treturn nil\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tfmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "content": "@@ -144,114 +144,8 @@\n g %7B%0A\n-%09var sb strings.Builder%0A%0A%09sb.WriteString(%22%5B%22)%0A%0A%09for node := l.Front(); node != l.root; node.Next() %7B%0A%0A%09%7D%0A%0A\n %09ret\n",
             "lines": "36"
+        },
+        {
+            "label": "2026-06-13_02-02-26",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -244,73 +244,8 @@\n () %7B\n-%0A%09%09sb.WriteString(%22 %22)%0A%09%09sb.WriteString(strconv.Itoa(node.Value))\n %0A%0A%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-06-13_02-05-25",
+            "content": "@@ -321,55 +321,8 @@\n e))%0A\n-%09%09if node == sword %7B%0A%09%09%09sb.WriteString(%22%3E%22)%0A%09%09%7D\n %0A%09%7D%0A\n@@ -334,19 +334,10 @@\n urn \n-sb.String()\n+%22%22\n %0A%7D%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-13_02-06-52",
+            "content": "@@ -237,23 +237,16 @@\n  l.root;\n- node =\n  node.Ne\n@@ -372,28 +372,8 @@\n %0A%09%7D%0A\n-%09sb.WriteString(%22%5D%22)\n %0A%09re\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-13_02-10-01",
+            "content": "@@ -588,18 +588,16 @@\n hosen)%0A%09\n-//\n fmt.Prin\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-13_02-10-34",
+            "content": "@@ -392,17 +392,16 @@\n String(%22\n- \n %5D%22)%0A%09ret\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-13_02-10-44",
+            "content": "@@ -518,56 +518,18 @@\n  %7B%0A%09\n-if l.size == 0 %7B%0A%09%09return nil%0A%09%7D%0A%09return it.next\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-13_02-13-49",
+            "content": "@@ -558,22 +558,20 @@\n turn it.\n-N\n+n\n ext\n-()\n %0A%7D%0A%0Afunc\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-13_02-15-27",
+            "content": "@@ -551,63 +551,8 @@\n %0A%09%7D%0A\n-%09if it.Next() == l.root %7B%0A%09%09return it.Next().Next()%0A%09%7D%0A\n %09ret\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-13_02-16-37",
+            "content": "@@ -582,22 +582,29 @@\n %09return \n-l.Fron\n+it.Next().Nex\n t()%0A%09%7D%0A%09\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-06-13_02-17-15",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tvar sb strings.Builder\n\n\tsb.WriteString(\"[\")\n\n\tfor node := l.Front(); node != l.root; node = node.Next() {\n\t\tsb.WriteString(\" \")\n\t\tsb.WriteString(strconv.Itoa(node.Value))\n\t\tif node == sword {\n\t\t\tsb.WriteString(\">\")\n\t\t}\n\t}\n\tsb.WriteString(\" ]\")\n\treturn sb.String()\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tif l.size == 0 {\n\t\treturn nil\n\t}\n\tif it.Next() == l.root {\n\t\treturn l.Front()\n\t}\n\treturn it.Next()\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\t//fmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "55"
         }
     ]
 }

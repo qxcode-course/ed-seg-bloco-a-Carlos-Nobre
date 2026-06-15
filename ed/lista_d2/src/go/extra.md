@@ -52,6 +52,7 @@ class Node {
     Prev() *Node // retorna o nó anterior ou nulo, se o anterior é o root
 }
 
+
 class LList {
     root * Node                   // Nó sentinela que marca o começo e o fim da lista
     size int                      // tamanho da lista

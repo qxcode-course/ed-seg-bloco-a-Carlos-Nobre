@@ -5,8 +5,7 @@ import (
 	"strings"
 )
 
-
-class DNode<T> {
+/*class DNode<T> {
 	Value: T
 	next, prev, root: *DNode<T>
 	Next() *DNode<T>
@@ -30,7 +29,7 @@ class DList<T> {
 	___
 	String() string
 	Size() int
-}
+}*/
 
 type DNode[T comparable] struct {
 	Value            T
