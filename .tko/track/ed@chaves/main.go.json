@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-21_00-55-19",
+            "content": "@@ -18,13 +18,11 @@\n ort \n-%22fmt%22\n+(%0A)\n %0A%0Afu\n@@ -37,134 +37,6 @@\n ) %7B%0A\n-%09fila := NewQueue%5Bstring%5D()%0A%0A%09for letra := 'A'; letra %3C= 'O'; letra++ %7B%0A%09%09fila.Enqueue((string(letra)))%0A%09%7D%0A%0A%09fmt.Println(fila)%0A%0A\n %7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-21_17-02-45",
+            "content": "@@ -149,223 +149,24 @@\n %0A%0A%09f\n-or i := 0; i %3C 15; i++ %7B%0A%09%09var timeA, timeB int%0A%0A%09%09fmt.Scan(&timeA, &timeB)%0A%0A%09%09if timeA %3E timeB %7B%0A%09%09%09fila.Enqueue(fila.Dequeue())%0A%09%09%09fila.Dequeue()%0A%09%09%7D else %7B%0A%09%09%09fila.Dequeue()%0A%09%09%09fila.Enqueue(fila.Dequeue())%0A%09%09%7D%0A%09%7D\n+mt.Println(fila)\n %0A%0A%7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-06-21_17-10-53",
+            "content": "@@ -366,40 +366,6 @@\n %09%7D%0A%0A\n-%09fmt.Println(fila.items.Front())%0A%0A\n %7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-21_17-11-18",
+            "content": "@@ -379,13 +379,27 @@\n tln(fila\n+.items.Front()\n )%0A%0A%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-21_17-11-30",
+            "content": "@@ -180,19 +180,19 @@\n var \n-golsA, gols\n+timeA, time\n B in\n@@ -210,35 +210,61 @@\n an(&\n-golsA, &gols\n+timeA, &time\n B)%0A%0A%09%09\n+if \n timeA \n-:= \n+%3E timeB %7B%0A%09%09%09fila.Enqueue(\n fila\n@@ -277,20 +277,13 @@\n ue()\n+)\n %0A%09%09\n-timeB := \n+%09\n fila\n@@ -297,27 +297,16 @@\n e()%0A\n-%0A\n %09%09\n-if golsA %3E golsB\n+%7D else\n  %7B%0A%09\n@@ -316,33 +316,17 @@\n ila.\n-En\n+De\n queue(\n-timeA)%0A%09%09%7D else %7B\n+)\n %0A%09%09%09\n@@ -338,21 +338,30 @@\n Enqueue(\n-timeB\n+fila.Dequeue()\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-21_17-14-44",
+            "content": "@@ -93,17 +93,17 @@\n tra %3C= '\n-P\n+O\n '; letra\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-21_17-16-20",
+            "content": "@@ -382,17 +382,8 @@\n fila\n-.String()\n )%0A%0A%7D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-21_17-16-31",
+            "content": "@@ -383,19 +383,14 @@\n ila.\n-items.Front\n+String\n ())%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-21_17-16-50",
+            "content": "@@ -396,14 +396,8 @@\n nt()\n-.Value\n )%0A%0A%7D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-21_17-17-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfila := NewQueue[string]()\n\n\tfor letra := 'A'; letra <= 'P'; letra++ {\n\t\tfila.Enqueue((string(letra)))\n\t}\n\n\tfor i := 0; i < 15; i++ {\n\t\tvar golsA, golsB int\n\n\t\tfmt.Scan(&golsA, &golsB)\n\n\t\ttimeA := fila.Dequeue()\n\t\ttimeB := fila.Dequeue()\n\n\t\tif golsA > golsB {\n\t\t\tfila.Enqueue(timeA)\n\t\t} else {\n\t\t\tfila.Enqueue(timeB)\n\t\t}\n\t}\n\n\tfmt.Println(fila.items.Front().Value)\n\n}\n",
+            "lines": "29"
+        }
+    ]
+}

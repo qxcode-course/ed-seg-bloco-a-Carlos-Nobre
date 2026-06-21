@@ -23,9 +23,11 @@ expanded:
 flags:
   inbox: all
   panel: skills
-  show_panel: 'false'
   task_graph_mode: time
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@backtrack
-selected_index: 16
+selected: ed@queimando
+selected_index: 10
