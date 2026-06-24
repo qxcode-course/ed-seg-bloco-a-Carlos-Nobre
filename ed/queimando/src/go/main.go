@@ -6,10 +6,34 @@ import (
 	"os"
 )
 
-func burnTrees(grid [][]rune, l, c int) {
-	stack := NewStack[Pos]()
-	_ , _ , _ = mat, l, c
+type Posicao struct {
+	l int
+	c int
+}
 
+func burnTrees(grid [][]rune, l, c int) {
+
+	stack := NewStack[Posicao]()
+	stack.Push(Posicao{l, c})
+
+	for !stack.IsEmpty() {
+		pos := stack.Pop()
+
+		if pos.l < 0 || pos.l >= len(grid) || pos.c < 0 || pos.c >= len(grid[0]) {
+			continue
+		}
+
+		if grid[pos.l][pos.c] != '#' {
+			continue
+		}
+
+		grid[pos.l][pos.c] = 'o'
+
+		stack.Push((Posicao{pos.l - 1, pos.c}))
+		stack.Push(Posicao{pos.l + 1, pos.c})
+		stack.Push(Posicao{pos.l, pos.c - 1})
+		stack.Push(Posicao{pos.l, pos.c + 1})
+	}
 	// Essa função deve usar uma list como pilha
 	// e marcar as árvores na matriz como queimados
 	// Uma sugestão de como fazer isso é:

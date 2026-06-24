@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_08-24-09",
+            "content": "@@ -22,244 +22,27 @@\n (%0A%09%22\n-fmt%22%0A)%0A%0Afunc main() %7B%0A%09var lines, colums int%0A\n+bufio%22\n %0A%09\n+%22\n fmt\n-.Scan(&lines, &colums)%0A%0A%09labirinto := make(%5B%5D%5B%5Drune, lines)%0A%0A%09for i := 0; i %3C lines; i++ %7B%0A%09%09var linha string%0A%09%09fmt.Scan(&linha)%0A%0A%09%09labirinto%5Bi%5D = %5B%5Drune(linha)%0A%09%7D%0A%09fmt.Println(labirinto)%0A%7D\n+%22%0A%09%22os%22%0A)%0A\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-06-23_08-40-22",
+            "content": "@@ -237,142 +237,29 @@\n %09%7D%0A%09\n-showLabirinto(labirinto)%0A%7D%0A%0Afunc showLabirinto(labirinto %5B%5D%5B%5Drune) %7B%0A%09for _, linha := range labirinto %7B%0A%09%09fmt.Println(string(linha))%0A%09%7D\n+fmt.Println(labirinto)\n %0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-23_08-43-14",
+            "content": "@@ -192,22 +192,9 @@\n Scan\n-f(%22%5Cn%25%5B%5E%5Cn%5D%22, \n+(\n &lin\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-23_08-44-56",
+            "content": "@@ -22,26 +22,11 @@\n (%0A%09%22\n-bufio%22%0A%09%22fmt%22%0A%09%22os\n+fmt\n %22%0A)%0A\n@@ -67,101 +67,19 @@\n int%0A\n-%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09scanner.Scan()\n %0A%09fmt.S\n-s\n can\n-f(scanner.Text(), %22%25d %25d%22, \n+(\n &lin\n@@ -165,22 +165,57 @@\n %7B%0A%09%09\n-scanner.Scan()\n+var linha string%0A%09%09fmt.Scanf(%22%5Cn%25%5B%5E%5Cn%5D%22, &linha)%0A\n %0A%09%09l\n@@ -239,22 +239,13 @@\n une(\n-scanner.Text()\n+linha\n )%0A%09%7D\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-23_08-45-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc main() {\n\tvar lines, colums int\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &lines, &colums)\n\n\tlabirinto := make([][]rune, lines)\n\n\tfor i := 0; i < lines; i++ {\n\t\tscanner.Scan()\n\t\tlabirinto[i] = []rune(scanner.Text())\n\t}\n\tshowLabirinto(labirinto)\n}\n\nfunc showLabirinto(labirinto [][]rune) {\n\tfor _, linha := range labirinto {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "29"
+        }
+    ]
+}

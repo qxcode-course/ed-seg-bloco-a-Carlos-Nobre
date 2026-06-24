@@ -1,0 +1,39 @@
+2026-06-24 10:47:42, MOVE, v:1, k:ed@balanceada, mode:PICK
+2026-06-24 10:47:43, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:0, size:23
+2026-06-24 10:49:45, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 10:55:16, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 10:59:07, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:0, size:39
+2026-06-24 10:59:11, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:0
+2026-06-24 10:59:27, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:0, size:39
+2026-06-24 11:01:07, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:04:21, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:12:05, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:50, size:75
+2026-06-24 11:12:01, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:13:35, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:70, size:80
+2026-06-24 11:16:53, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:19:10, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:80, size:85
+2026-06-24 11:19:15, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:80
+2026-06-24 11:19:09, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:24:18, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:90, size:90
+2026-06-24 11:25:29, EXEC, v:1, k:ed@balanceada, mode:FULL, size:89, fail:COMP
+2026-06-24 11:25:52, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:90, size:90
+2026-06-24 11:27:08, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100, size:84
+2026-06-24 11:27:07, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-24 11:27:15, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:16, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:17, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:17, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:17, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:17, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:18, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:18, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:18, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:20, MOVE, v:1, k:ed@balanceada, mode:BACK
+2026-06-24 11:27:23, MOVE, v:1, k:ed@balanceada, mode:DOWN
+2026-06-24 11:27:54, MOVE, v:1, k:ed@balanceada, mode:PICK
+2026-06-24 11:27:55, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100
+2026-06-24 11:27:56, MOVE, v:1, k:ed@balanceada, mode:BACK
+2026-06-24 11:28:07, SELF, v:1, k:ed@balanceada, self:1, rate:100, study:52, concept:1
+2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:DOWN
+2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:EDIT
+2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:EDIT

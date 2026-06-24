@@ -19,15 +19,15 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
+- ed@backtrack
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: time
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@queimando
-selected_index: 10
+selected: ed@n_rainhas
+selected_index: 12

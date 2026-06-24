@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_09-09-09",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -24,374 +24,52 @@\n t%22%0A%0A\n-type Stack struct %7B%0A%09data %5B%5Dstring%0A%7D%0A%0Afunc (st *Stack) Push(value string) %7B%0A%09st.data = append(st.data, value)%0A%7D%0A%0Afunc (st *Stack) Pop() string %7B%0A%09v := st.data%5Blen(st.data)-1%5D%0A%09st.data = st.data%5B:len(st.data)-1%5D%0A%0A%09return v%0A%7D%0Afunc (st *Stack) Top() string %7B%0A%09return st.data%5Blen(st.data)-1%5D%0A%7D%0A%0Afunc (st *Stack) Empty() bool %7B%0A%09return len(st.data) == 0%0A%7D%0Afunc main() %7B%0A%09\n+struct Stack type%7B%0A    %0A%7D%0Afunc main() %7B%0A    \n fmt.\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-06-23_09-16-28",
+            "content": "@@ -372,17 +372,16 @@\n  == 0%0A%7D%0A\n-%0A\n func mai\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-23_10-35-43",
+            "content": "@@ -382,256 +382,45 @@\n unc \n-Prioridade(value string) int %7B%0A%09switch value %7B%0A%09case %22+%22, %22-%22:%0A%09%09return 1%0A%09case %22*%22, %22/%22:%0A%09%09return 2%0A%09case %22%5E%22:%0A%09%09return 3%0A%09%7D%0A%09return 0%0A%7D%0A%0Afunc IsOp(s string) bool %7B%0A%09return s == %22+%22 %7C%7C s == %22-%22 %7C%7C s == %22*%22 %7C%7C s == %22/%22 %7C%7C s == %22%5E%22%0A%7D%0A%0Afunc main() %7B%0A%09\n+main() %7B%0A%09fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-23_12-48-31",
+            "content": "@@ -18,37 +18,13 @@\n ort \n-(%0A%09%22bufio%22%0A%09%22os%22%0A%09%22strings%22%0A)\n+%22fmt%22\n %0A%0Aty\n@@ -631,336 +631,7 @@\n  %7B%0A%09\n-scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%0A%09tokens := strings.Fields(scanner.Text())%0A%0A%09var st Stack%0A%09var out %5B%5Dstring%0A%0A%09for _, t := range tokens %7B%0A%09%09if IsOp(t) %7B%0A%09%09%09for !st.Empty() && Prioridade(st.Top()) %3E= Prioridade(t) %7B%0A%09%09%09%09out = append(out, st.Pop())%0A%09%09%09%7D%0A%09%09%09st.Push(t)%0A%09%09%7D else %7B%0A%09%09%09out = append(out, t)%0A%09%09%7D%0A%09%7D%0A\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-23_12-58-28",
+            "content": "@@ -985,59 +985,6 @@\n %09%7D%0A%0A\n-%09for !st.Empty() %7B%0A%09%09out = append(out, st.Pop())%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-23_12-59-50",
+            "content": "@@ -29,15 +29,8 @@\n io%22%0A\n-%09%22fmt%22%0A\n %09%22os\n@@ -753,117 +753,8 @@\n ))%0A%0A\n-%09// numeros v%C3%A3o direto para a saida, a sequencia de operandores que vai pra saida depende da sua prioridade%0A%0A\n %09var\n@@ -1037,43 +1037,7 @@\n %0A%09%7D%0A\n-%09fmt.Println(strings.Join(out, %22 %22))\n %0A%7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-23_13-02-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\ntype Stack struct {\n\tdata []string\n}\n\nfunc (st *Stack) Push(value string) {\n\tst.data = append(st.data, value)\n}\n\nfunc (st *Stack) Pop() string {\n\tv := st.data[len(st.data)-1]\n\tst.data = st.data[:len(st.data)-1]\n\n\treturn v\n}\nfunc (st *Stack) Top() string {\n\treturn st.data[len(st.data)-1]\n}\n\nfunc (st *Stack) Empty() bool {\n\treturn len(st.data) == 0\n}\n\nfunc Prioridade(value string) int {\n\tswitch value {\n\tcase \"+\", \"-\":\n\t\treturn 1\n\tcase \"*\", \"/\":\n\t\treturn 2\n\tcase \"^\":\n\t\treturn 3\n\t}\n\treturn 0\n}\n\nfunc IsOp(s string) bool {\n\treturn s == \"+\" || s == \"-\" || s == \"*\" || s == \"/\" || s == \"^\"\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\n\ttokens := strings.Fields(scanner.Text())\n\n\t// numeros v\u00e3o direto para a saida, a sequencia de operandores que vai pra saida depende da sua prioridade\n\n\tvar st Stack\n\tvar out []string\n\n\tfor _, t := range tokens {\n\t\tif IsOp(t) {\n\t\t\tfor !st.Empty() && Prioridade(st.Top()) >= Prioridade(t) {\n\t\t\t\tout = append(out, st.Pop())\n\t\t\t}\n\t\t\tst.Push(t)\n\t\t} else {\n\t\t\tout = append(out, t)\n\t\t}\n\t}\n\n\tfor !st.Empty() {\n\t\tout = append(out, st.Pop())\n\t}\n\tfmt.Println(strings.Join(out, \" \"))\n}\n",
+            "lines": "74"
+        }
+    ]
+}

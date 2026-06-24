@@ -4,8 +4,7 @@
 
 - Seja uma matriz de caracteres que representa um mapa de uma floresta.
 - Cada caractere representa um espaço vazio ou uma árvore.
-- O espaço vazio é representado por um ponto `.` e a árvore por uma hashtag `#`.
-- O fogo começa em um ponto inicial e se espalha para os vizinhos até que não haja mais árvores para queimar.
+- O espaço vazio é representado por um ponto `.` e a árvore por uma hashtag `#`.ko- O fogo começa em um ponto inicial e se espalha para os vizinhos até que não haja mais árvores para queimar.
 
 Dado a matriz da floresta e o ponto inicial onde começa o fogo, queime as árvores. O fogo não se espalha nas diagonais, apenas nas 4 direções cardeais.
 

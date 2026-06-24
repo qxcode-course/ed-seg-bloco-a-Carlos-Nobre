@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_13-03-17",
+            "content": "@@ -10,307 +10,66 @@\n ain%0A\n-%0Atype Stack struct %7B%0A%09data %5B%5Dstring%0A%7D%0A%0Afunc (st *Stack) Push(value string\n+import %22fmt%22%0Afunc main(\n ) %7B%0A\n-%09st.data = append(st.data, value)%0A%7D%0A%0Afunc (st *Stack) Empty() bool %7B%0A%09return len(st.data) == 0%0A%7D%0A%0Afunc (st *Stack) Pop() string %7B%0A%09r := st.data%5Blen(st.data)-1%5D%0A%09st.data = st.data%5B:len(st.data)-1%5D%0A%09return r%0A%7D%0A%0Afunc main() %7B%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-24_10-47-43",
+            "content": "@@ -11,42 +11,8 @@\n in%0A%0A\n-import (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A\n type\n@@ -301,202 +301,16 @@\n unc \n-(st *Stack) Top() string %7B%0A%09return st.data%5Blen(st.data)-1%5D%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09s := scanner.Text()%0A%0A%09for _, c := range s %7B%0A%09%09fmt.Println(c)%0A%09%7D\n+main() %7B%0A\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-06-24_10-59-07",
+            "content": "@@ -525,17 +525,9 @@\n tln(\n-string(c)\n+c\n )%0A%09%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-24_10-59-27",
+            "content": "@@ -69,20 +69,22 @@\n %09data %5B%5D\n-rune\n+string\n %0A%7D%0A%0Afunc\n@@ -107,20 +107,22 @@\n h(value \n-rune\n+string\n ) %7B%0A%09st.\n@@ -234,28 +234,30 @@\n tack) Pop() \n-rune\n+string\n  %7B%0A%09r := st.\n@@ -349,20 +349,22 @@\n ) Top() \n-rune\n+string\n  %7B%0A%09retu\n@@ -397,270 +397,8 @@\n %0A%7D%0A%0A\n-func IsClose(value rune) bool %7B%0A%09if value == ')' %7C%7C value == '%7D' %7C%7C value == '%5D' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc MyComplemt(value rune) rune %7B%0A%09switch value %7B%0A%09case '%5D':%0A%09%09return '%5B'%0A%09case ')':%0A%09%09return '('%0A%09case '%7D':%0A%09%09return '%7B'%0A%09%7D%0A%0A%09return value%0A%7D%0A%0A\n func\n@@ -488,26 +488,8 @@\n ()%0A%0A\n-%09var pilha Stack%0A%0A\n %09for\n@@ -513,221 +513,29 @@\n %7B%0A%09%09\n-if !IsClose(c) %7B%0A%09%09%09pilha.Push(c)%0A%09%09%7D else %7B%0A%09%09%09if pilha.Top() == MyComplemt(c) %7B%0A%09%09%09%09pilha.Pop()%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22nao balanceado%22)%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09if pilha.Empty() %7B%0A%09%09fmt.Println(%22balanceado%22\n+fmt.Println(string(c)\n )%0A%09%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-24_11-12-05",
+            "content": "@@ -830,80 +830,8 @@\n e %7B%0A\n-%09%09%09if pilha.Empty() %7B%0A%09%09%09%09fmt.Println(%22nao balanceado%22)%0A%09%09%09%09break%0A%09%09%09%7D%0A%0A\n %09%09%09i\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-06-24_11-13-35",
+            "content": "@@ -630,80 +630,8 @@\n '%7B'%0A\n-%09case '%5B':%0A%09%09return '%5D'%0A%09case '(':%0A%09%09return ')'%0A%09case '%7B':%0A%09%09return '%7D'%0A\n %09%7D%0A%0A\n@@ -788,64 +788,139 @@\n %09if \n-pilha.Empty()\n+!IsClose(c) %7B%0A%09%09%09pilha.Push(c)%0A%09%09%7D else\n  %7B%0A%09%09%09\n+if \n pilha.\n-Push(c)%0A%09%09%09continue%0A\n+Empty() %7B%0A%09%09%09%09fmt.Println(%22nao balanceado%22)%0A%09%09%09%09break%0A%09\n %09%09%7D%0A%0A%09%09\n+%09\n if \n-c\n+pilha.Top()\n  == \n@@ -934,23 +934,14 @@\n emt(\n-pilha.Top()\n+c\n ) %7B%0A\n+%09\n %09%09%09p\n@@ -949,24 +949,25 @@\n lha.Pop()%0A%09%09\n+%09\n %7D else %7B%0A%09%09%09\n@@ -970,26 +970,57 @@\n %0A%09%09%09\n+%09\n-pilha.Push(c)%0A%09%09%7D%0A\n+fmt.Println(%22nao balanceado%22)%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D\n %0A%09%7D%0A\n@@ -1074,50 +1074,7 @@\n )%0A%09%7D\n- else %7B%0A%09%09fmt.Println(%22nao balanceado%22)%0A%09%7D%0A\n %0A%7D%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-24_11-19-10",
+            "content": "@@ -854,98 +854,8 @@\n  s %7B\n-%0A%0A%09%09if pilha.Empty() && (c == ')' %7C%7C c == '%7D' %7C%7C c == '%5D') %7B%0A%09%09%09pilha.Push(c)%0A%09%09%09break%0A%09%09%7D\n %0A%09%09i\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-06-24_11-24-18",
+            "content": "@@ -535,11 +535,12 @@\n ne) \n-any\n+rune\n  %7B%0A%09\n@@ -702,16 +702,30 @@\n '%7D'%0A%09%7D%0A%0A\n+%09return value%0A\n %7D%0A%0Afunc \n@@ -851,16 +851,17 @@\n nge s %7B%0A\n+%0A\n %09%09if pil\n@@ -937,21 +937,20 @@\n %09%09break%0A\n+\n %09%09%7D%0A\n-%0A\n %09%09if pil\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-06-24_11-25-29",
+            "content": "@@ -531,20 +531,19 @@\n e rune) \n-rune\n+any\n  %7B%0A%09swit\n@@ -705,22 +705,8 @@\n %09%7D%0A%0A\n-%09return value%0A\n %7D%0A%0Af\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-06-24_11-25-52",
+            "content": "@@ -554,16 +554,88 @@\n value %7B%0A\n+%09case '%5D':%0A%09%09return '%5B'%0A%09case ')':%0A%09%09return '('%0A%09case '%7D':%0A%09%09return '%7B'%0A\n %09case '%5B\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-06-24_11-27-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Stack struct {\n\tdata []rune\n}\n\nfunc (st *Stack) Push(value rune) {\n\tst.data = append(st.data, value)\n}\n\nfunc (st *Stack) Empty() bool {\n\treturn len(st.data) == 0\n}\n\nfunc (st *Stack) Pop() rune {\n\tr := st.data[len(st.data)-1]\n\tst.data = st.data[:len(st.data)-1]\n\treturn r\n}\n\nfunc (st *Stack) Top() rune {\n\treturn st.data[len(st.data)-1]\n}\n\nfunc IsClose(value rune) bool {\n\tif value == ')' || value == '}' || value == ']' {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc MyComplemt(value rune) rune {\n\tswitch value {\n\tcase '[':\n\t\treturn ']'\n\tcase '(':\n\t\treturn ')'\n\tcase '{':\n\t\treturn '}'\n\t}\n\n\treturn value\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\ts := scanner.Text()\n\n\tvar pilha Stack\n\n\tfor _, c := range s {\n\t\tif pilha.Empty() && (c == ')' || c == '}' || c == ']') {\n\t\t\tpilha.Push(c)\n\t\t\tbreak\n\t\t}\n\n\t\tif pilha.Empty() {\n\t\t\tpilha.Push(c)\n\t\t\tcontinue\n\t\t}\n\n\t\tif c == MyComplemt(pilha.Top()) {\n\t\t\tpilha.Pop()\n\t\t} else {\n\t\t\tpilha.Push(c)\n\t\t}\n\n\t}\n\n\tif pilha.Empty() {\n\t\tfmt.Println(\"balanceado\")\n\t} else {\n\t\tfmt.Println(\"nao balanceado\")\n\t}\n\n}\n",
+            "lines": "84"
+        }
+    ]
+}
