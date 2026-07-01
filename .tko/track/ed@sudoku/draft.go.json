@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-30_23-12-57",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,191 +37,39 @@\n ) %7B%0A\n-%09var n int%0A%0A%09fmt.Scan(&n)%0A%0A%09matriz := make(%5B%5D%5B%5Drune, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var linha string%0A%09%09fmt.Scan(&linha)%0A%09%09matriz%5Bi%5D = %5B%5Drune(linha)%0A%09%7D%0A%0A%09fmt.Println(string(matriz%5B1%5D)\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-01_16-36-45",
+            "content": "@@ -25,456 +25,8 @@\n t%22%0A%0A\n-func naLinha(matriz %5B%5D%5B%5Drune, lin int, valor rune) bool %7B%0A%09for i := 0; i %3C len(matriz); i++ %7B%0A%09%09if matriz%5Blin%5D%5Bi%5D == valor %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false%0A%7D%0A%0Afunc resolver(matriz %5B%5D%5B%5Drune, index int) bool %7B%0A%09n := len(matriz)%0A%0A%09if index == n*n %7B%0A%09%09return true%0A%09%7D%0A%0A%09l := index / n%0A%09c := index %25 n%0A%0A%09if matriz%5Bl%5D%5Bc%5D == '.' %7B%0A%09%09return resolver(matriz, index+1)%0A%09%7D%0A%0A%09for num := 1; num %3C= n; num++ %7B%0A%09%09valor := rune('0' + num)%0A%0A%09%7D%0A%09return false%0A%7D%0A%0A\n func\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-07-01_16-45-48",
+            "content": "@@ -189,669 +189,8 @@\n %0A%7D%0A%0A\n-func naColuna(matriz %5B%5D%5B%5Drune, colu int, valor rune) bool %7B%0A%09for i := 0; i %3C len(matriz); i++ %7B%0A%09%09if matriz%5Bi%5D%5Bcolu%5D == valor %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc quadrante(matriz %5B%5D%5B%5Drune, lin, col int) %5B%5Drune %7B%0A%09n := len(matriz)%0A%0A%09var tam int%0A%0A%09if n == 4 %7B%0A%09%09tam = 2%0A%09%7D else %7B%0A%09%09tam = 3%0A%09%7D%0A%0A%09l := (lin / tam) * tam%0A%09c := (col / tam) * tam%0A%0A%09q := %5B%5Drune%7B%7D%0A%0A%09for i := 0; i %3C tam; i++ %7B%0A%09%09for j := 0; j %3C tam; j++ %7B%0A%09%09%09q = append(q, matriz%5Bl+i%5D%5Bc+j%5D)%0A%09%09%7D%0A%09%7D%0A%09return q%0A%7D%0Afunc noQuadrante(matriz %5B%5D%5B%5Drune, lin, col int, valor rune) bool %7B%0A%09q := quadrante(matriz, lin, col)%0A%0A%09for _, x := range q %7B%0A%09%09if x == valor %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false%0A%7D%0A%0A\n func\n@@ -234,16 +234,16 @@\n  bool %7B%0A\n+\n %09n := le\n@@ -451,217 +451,8 @@\n num)\n-%0A%09%09if !naLinha(matriz, l, valor) && !naColuna(matriz, c, valor) && !noQuadrante(matriz, l, c, valor) %7B%0A%09%09%09matriz%5Bl%5D%5Bc%5D = valor%0A%0A%09%09%09if resolver(matriz, index+1) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%0A%09%09%09matriz%5Bl%5D%5Bc%5D = '.'%0A%09%09%7D\n %0A%0A%09%7D\n@@ -640,57 +640,8 @@\n %09%7D%0A%0A\n-%09resolver(matriz, 0)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09\n %09fmt\n@@ -667,14 +667,11 @@\n riz%5B\n-i\n+1\n %5D))%0A\n-%09%7D%0A\n %7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-07-01_17-06-44",
+            "content": "@@ -1001,17 +1001,17 @@\n z%5Bl%5D%5Bc%5D \n-!\n+=\n = '.' %7B%0A\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-01_17-08-02",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc naLinha(matriz [][]rune, lin int, valor rune) bool {\n\tfor i := 0; i < len(matriz); i++ {\n\t\tif matriz[lin][i] == valor {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc naColuna(matriz [][]rune, colu int, valor rune) bool {\n\tfor i := 0; i < len(matriz); i++ {\n\t\tif matriz[i][colu] == valor {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc quadrante(matriz [][]rune, lin, col int) []rune {\n\tn := len(matriz)\n\n\tvar tam int\n\n\tif n == 4 {\n\t\ttam = 2\n\t} else {\n\t\ttam = 3\n\t}\n\n\tl := (lin / tam) * tam\n\tc := (col / tam) * tam\n\n\tq := []rune{}\n\n\tfor i := 0; i < tam; i++ {\n\t\tfor j := 0; j < tam; j++ {\n\t\t\tq = append(q, matriz[l+i][c+j])\n\t\t}\n\t}\n\treturn q\n}\nfunc noQuadrante(matriz [][]rune, lin, col int, valor rune) bool {\n\tq := quadrante(matriz, lin, col)\n\n\tfor _, x := range q {\n\t\tif x == valor {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc resolver(matriz [][]rune, index int) bool {\n\tn := len(matriz)\n\n\tif index == n*n {\n\t\treturn true\n\t}\n\n\tl := index / n\n\tc := index % n\n\n\tif matriz[l][c] != '.' {\n\t\treturn resolver(matriz, index+1)\n\t}\n\n\tfor num := 1; num <= n; num++ {\n\t\tvalor := rune('0' + num)\n\t\tif !naLinha(matriz, l, valor) && !naColuna(matriz, c, valor) && !noQuadrante(matriz, l, c, valor) {\n\t\t\tmatriz[l][c] = valor\n\n\t\t\tif resolver(matriz, index+1) {\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\tmatriz[l][c] = '.'\n\t\t}\n\n\t}\n\treturn false\n}\n\nfunc main() {\n\tvar n int\n\n\tfmt.Scan(&n)\n\n\tmatriz := make([][]rune, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tvar linha string\n\t\tfmt.Scan(&linha)\n\t\tmatriz[i] = []rune(linha)\n\t}\n\n\tresolver(matriz, 0)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Println(string(matriz[i]))\n\t}\n}\n",
+            "lines": "106"
+        }
+    ]
+}

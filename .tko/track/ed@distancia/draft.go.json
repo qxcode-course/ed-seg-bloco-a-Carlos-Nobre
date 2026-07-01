@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-25_16-09-42",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,162 +23,53 @@\n mt%22%0A\n-%0Avar (%0A%09s %5B%5Dbyte%0A%09n int%0A%09L int%0A)%0A%0Afunc main() %7B%0A%09var entry string%0A%09fmt.Scan(&entry)%0A%09fmt.Scan(&L)%0A%0A%09s = %5B%5Dbyte(entry)%0A%09n = len(s)%0A%0A%09fmt.Println(string(s))%0A\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-25_16-22-27",
+            "content": "@@ -29,23 +29,16 @@\n var (%0A%09s\n-equence\n  %5B%5Dbyte%0A\n@@ -42,30 +42,16 @@\n te%0A%09\n-size     int%0A%09limit   \n+n int%0A%09L\n  int\n@@ -119,25 +119,14 @@\n an(&\n-limit)%0A%0A%09sequence\n+L)%0A%0A%09s\n  = %5B\n@@ -143,20 +143,17 @@\n y)%0A%09\n-size\n+n\n  = len(s\n eque\n@@ -148,23 +148,16 @@\n  = len(s\n-equence\n )%0A%0A%09fmt.\n@@ -176,15 +176,8 @@\n ng(s\n-equence\n ))%0A%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-25_16-33-06",
+            "content": "@@ -79,387 +79,8 @@\n %0A)%0A%0A\n-func mod(value int) int %7B%0A%09if value %3C 0 %7B%0A%09%09return -(value)%0A%09%7D%0A%09return value%0A%7D%0A%0Afunc Isvalid(pos int, digit byte) bool %7B%0A%0A%09for i := pos - 1; i %3E= 0; i-- %7B%0A%09%09if digit == sequence%5Bi%5D && mod(pos-i) %3C limit %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%0A%09for i := pos + 1; i %3C 0; i++ %7B%0A%09%09if digit == sequence%5Bi%5D && mod(pos-i) %3C limit %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%0A%09return true%0A%7D%0A%0Afunc trasnformation() %7B%0A%0A%7D%0A%0A\n func\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-25_16-43-06",
+            "content": "@@ -450,392 +450,12 @@\n ion(\n-pos int) bool %7B%0A%09if pos == size %7B%0A%09%09return true%0A%09%7D%0A%09if sequence%5Bpos%5D != '.' %7B%0A%09%09if !Isvalid(pos, sequence%5Bpos%5D) %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%09return trasnformation(pos + 1)%0A%09%7D%0A%0A%09for digit := byte('0'); digit %3C= byte('0'+limit); digit++ %7B%0A%09%09if Isvalid(pos, digit) %7B%0A%09%09%09sequence%5Bpos%5D = digit%0A%0A%09%09%09if trasnformation(pos + 1) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%0A%09%09%09sequence%5Bpos%5D = '.'%0A%0A%09%09%7D%0A%09%7D%0A%0A%09return false\n+) %7B%0A\n %0A%7D%0A%0A\n@@ -576,28 +576,8 @@\n e)%0A%0A\n-%09trasnformation(0)%0A%0A\n %09fmt\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-25_16-50-14",
+            "content": "@@ -327,20 +327,17 @@\n  1; i %3C \n-size\n+0\n ; i++ %7B%0A\n@@ -377,17 +377,16 @@\n pos-i) %3C\n-=\n  limit %7B\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-06-26_23-49-43",
+            "content": "@@ -263,33 +263,32 @@\n  && mod(pos-i) %3C\n-=\n  limit %7B%0A%09%09%09retu\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-06-26_23-50-24",
+            "content": "package main\n\nimport \"fmt\"\n\nvar (\n\tsequence []byte\n\tsize     int\n\tlimit    int\n)\n\nfunc mod(value int) int {\n\tif value < 0 {\n\t\treturn -(value)\n\t}\n\treturn value\n}\n\nfunc Isvalid(pos int, digit byte) bool {\n\n\tfor i := pos - 1; i >= 0; i-- {\n\t\tif digit == sequence[i] && mod(pos-i) <= limit {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tfor i := pos + 1; i < size; i++ {\n\t\tif digit == sequence[i] && mod(pos-i) <= limit {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}\n\nfunc trasnformation(pos int) bool {\n\tif pos == size {\n\t\treturn true\n\t}\n\tif sequence[pos] != '.' {\n\t\tif !Isvalid(pos, sequence[pos]) {\n\t\t\treturn false\n\t\t}\n\t\treturn trasnformation(pos + 1)\n\t}\n\n\tfor digit := byte('0'); digit <= byte('0'+limit); digit++ {\n\t\tif Isvalid(pos, digit) {\n\t\t\tsequence[pos] = digit\n\n\t\t\tif trasnformation(pos + 1) {\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\tsequence[pos] = '.'\n\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tvar entry string\n\tfmt.Scan(&entry)\n\tfmt.Scan(&limit)\n\n\tsequence = []byte(entry)\n\tsize = len(sequence)\n\n\ttrasnformation(0)\n\n\tfmt.Println(string(sequence))\n\n}\n",
+            "lines": "74"
+        }
+    ]
+}

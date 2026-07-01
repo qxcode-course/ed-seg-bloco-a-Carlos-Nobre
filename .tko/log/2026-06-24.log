@@ -37,3 +37,38 @@
 2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:DOWN
 2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:EDIT
 2026-06-24 11:29:22, MOVE, v:1, k:ed@n_rainhas, mode:EDIT
+2026-06-24 11:40:50, MOVE, v:1, k:ed@n_rainhas, mode:PICK
+2026-06-24 11:40:50, EXEC, v:1, k:ed@n_rainhas, mode:FULL, rate:0, size:5
+2026-06-24 14:34:30, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-06-24 14:35:00, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-06-24 14:36:29, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:5
+2026-06-24 14:36:29, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:5
+2026-06-24 14:36:42, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:75, size:7
+2026-06-24 14:37:12, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-06-24 14:37:24, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-06-24 14:37:25, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:7, fail:COMP
+2026-06-24 14:37:55, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:75, size:7
+2026-06-24 14:34:30, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 14:37:53, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 14:40:57, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 14:48:48, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 14:48:51, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:20, fail:COMP
+2026-06-24 14:49:03, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:18
+2026-06-24 14:49:09, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-06-24 14:50:33, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-06-24 14:52:28, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:15
+2026-06-24 14:52:45, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-06-24 14:52:43, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 14:55:34, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 15:07:45, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 15:14:46, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:34
+2026-06-24 15:15:36, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:34
+2026-06-24 15:17:02, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:32
+2026-06-24 15:18:06, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:32
+2026-06-24 15:18:04, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-06-24 15:19:23, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:30
+2026-06-24 15:20:30, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:30, fail:COMP
+2026-06-24 15:22:04, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:35
+2026-06-24 15:22:05, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-06-24 15:23:14, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:29, size:39
+2026-06-24 15:23:25, MOVE, v:1, k:ed@subset_sum, mode:BACK

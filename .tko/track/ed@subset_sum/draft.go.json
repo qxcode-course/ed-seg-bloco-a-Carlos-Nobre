@@ -1,0 +1,114 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-24_14-36-42",
+            "content": "@@ -35,11 +35,31 @@\n ain() %7B%0A\n+%09fmt.Println(%22true%22)\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-24_14-37-25",
+            "content": "@@ -39,27 +39,7 @@\n ) %7B%0A\n-%09fmt.Println(%22true%22)\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-24_14-37-55",
+            "content": "@@ -30,217 +30,36 @@\n unc \n-subset_sum()%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09elements := make(%5B%5Dint, 0)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09element := 0%0A%09%09fmt.Scan(&element)%0A%09%09elements = append(elements, element)%0A%09%7D%0A%0A%09fmt.Println(elements\n+main() %7B%0A%09fmt.Println(%22true%22\n )%0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-24_14-48-51",
+            "content": "@@ -21,16 +21,35 @@\n  %22fmt%22%0A%0A\n+func subset_sum()%0A%0A\n func mai\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-06-24_14-49-03",
+            "content": "@@ -86,17 +86,17 @@\n (%5B%5Dint, \n-n\n+0\n )%0A%0A%09for \n@@ -116,16 +116,31 @@\n ; i++ %7B%0A\n+%09%09element := 0%0A\n %09%09fmt.Sc\n@@ -154,12 +154,47 @@\n ment\n-s%5Bi%5D\n+)%0A%09%09elements = append(elements, element\n )%0A%09%7D\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-24_14-50-33",
+            "content": "@@ -45,16 +45,8 @@\n ar n\n-, target\n  int\n@@ -62,17 +62,8 @@\n n(&n\n-, &target\n )%0A%0A%09\n@@ -145,10 +145,33 @@\n i%5D)%0A%09%7D%0A%0A\n+%09fmt.Println(elements)%0A\n %7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-24_14-52-28",
+            "content": "@@ -166,27 +166,6 @@\n %09%7D%0A%0A\n-%09fmt.Println(target)%0A\n %7D%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-24_14-52-45",
+            "content": "@@ -25,288 +25,8 @@\n t%22%0A%0A\n-func subset_sum(target int, elements %5B%5Dint, index int, sum int) bool %7B%0A%09if sum == target %7B%0A%09%09return true%0A%09%7D%0A%09if index %3E len(elements) %7B%0A%09%09index = 0%0A%09%7D%0A%0A%09sum = elements%5Bindex%5D%0A%0A%09subset_sum(target, elements, index+1, sum)%0A%09subset_sum(target, elements, index, sum)%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -35,17 +35,16 @@\n ain() %7B%0A\n-%0A\n %09var n, \n@@ -167,42 +167,26 @@\n %7D%0A%0A%09\n-subset_sum(target, elements, 0, 0)%0A\n+fmt.Println(target)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-24_15-14-46",
+            "content": "@@ -158,10 +158,8 @@\n nts)\n--1\n  %7B%0A%09\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-24_15-15-36",
+            "content": "@@ -135,22 +135,17 @@\n %7D%0A%09i\n-ndex =\n+f\n  index \n-%25\n+%3E\n  len\n@@ -154,16 +154,35 @@\n lements)\n+-1 %7B%0A%09%09index = 0%0A%09%7D\n %0A%0A%09sum =\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-24_15-17-02",
+            "content": "@@ -171,14 +171,8 @@\n um =\n- sum +\n  ele\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-24_15-18-06",
+            "content": "@@ -161,16 +161,46 @@\n ments)%0A%0A\n+%09sum = sum + elements%5Bindex%5D%0A%0A\n %09subset_\n@@ -237,24 +237,8 @@\n  sum\n-+elements%5Bindex%5D\n )%0A%09s\n@@ -266,26 +266,24 @@\n ments, index\n-+1\n , sum)%0A%0A%09ret\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-24_15-19-23",
+            "content": "@@ -84,18 +84,8 @@\n sum \n-int,count \n int)\n@@ -92,16 +92,16 @@\n  bool %7B%0A\n+\n %09if sum \n@@ -219,24 +219,16 @@\n s%5Bindex%5D\n-,count++\n )%0A%09subse\n@@ -267,16 +267,8 @@\n  sum\n-,count++\n )%0A%0A%09\n@@ -425,16 +425,16 @@\n i%5D)%0A%09%7D%0A%0A\n+\n %09subset_\n@@ -458,16 +458,14 @@\n nts, 0, \n-0,\n 0)%0A%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-24_15-20-30",
+            "content": "@@ -84,17 +84,16 @@\n sum int,\n- \n count in\n@@ -143,64 +143,8 @@\n %0A%09%7D%0A\n-%09if count == len(elements) %7B%0A%09%09return false%0A%09%7D%0A%09count++%0A\n %09ind\n@@ -230,22 +230,23 @@\n %5Bindex%5D,\n- \n count\n+++\n )%0A%09subse\n@@ -286,14 +286,15 @@\n sum,\n- \n count\n+++\n )%0A%0A%09\n@@ -306,17 +306,16 @@\n n false%0A\n-%0A\n %7D%0A%0Afunc \n@@ -486,15 +486,14 @@\n s, 0, 0,\n- \n 0)%0A%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-24_15-22-04",
+            "content": "@@ -508,19 +508,16 @@\n %5D)%0A%09%7D%0A%0A%09\n-if \n subset_s\n@@ -549,68 +549,8 @@\n , 0)\n- %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-24_15-23-14",
+            "content": "@@ -53,62 +53,319 @@\n nt, \n-index int, actual int, elements %5B%5Dint, sum int) bool %7B\n+elements %5B%5Dint, index int, sum int, count int) bool %7B%0A%09if sum == target %7B%0A%09%09return true%0A%09%7D%0A%09if count == len(elements) %7B%0A%09%09return false%0A%09%7D%0A%09count++%0A%09index = index %25 len(elements)%0A%0A%09subset_sum(target, elements, index+1, sum+elements%5Bindex%5D, count)%0A%09subset_sum(target, elements, index+1, sum, count)%0A%0A%09return false\n %0A%0A%7D%0A\n@@ -507,10 +507,113 @@\n i%5D)%0A%09%7D%0A%0A\n+%09if subset_sum(target, elements, 0, 0, 0) %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-25_15-56-16",
+            "content": "@@ -60,16 +60,28 @@\n ex int, \n+actual int, \n elements\n@@ -107,219 +107,8 @@\n ol %7B\n-%0A%09if sum == target %7B%0A%09%09return true%0A%09%7D%0A%0A%09if index %3E= len(elements) %7B%0A%09%09return false%0A%09%7D%0A%0A%09index++%0A%0A%09subset_sum(target, index, elements, sum+elements%5Bindex%5D)%0A%09subset_sum(target, index, elements, sum)%0A%0A%09return false\n %0A%0A%7D%0A\n@@ -254,107 +254,6 @@\n %09%7D%0A%0A\n-%09if subset_sum(target, -1, elements, 0) %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-06-25_16-01-29",
+            "content": "@@ -140,17 +140,17 @@\n f index \n-=\n+%3E\n = len(el\n@@ -156,18 +156,16 @@\n lements)\n--1\n  %7B%0A%09%09ret\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-25_16-02-14",
+            "content": "@@ -144,9 +144,10 @@\n dex \n-%3E\n+==\n  len\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-25_16-02-37",
+            "content": "@@ -140,18 +140,17 @@\n f index \n-==\n+%3E\n  len(ele\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-25_16-03-17",
+            "content": "@@ -191,23 +191,16 @@\n dex++%0A%0A%09\n-return \n subset_s\n@@ -251,12 +251,10 @@\n ex%5D)\n- %7C%7C \n+%0A%09\n subs\n@@ -291,16 +291,31 @@\n , sum)%0A%0A\n+%09return false%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-25_16-08-22",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc subset_sum(target int, index int, elements []int, sum int) bool {\n\tif sum == target {\n\t\treturn true\n\t}\n\n\tif index == len(elements)-1 {\n\t\treturn false\n\t}\n\n\tindex++\n\n\treturn subset_sum(target, index, elements, sum+elements[index]) || subset_sum(target, index, elements, sum)\n\n}\n\nfunc main() {\n\n\tvar n, target int\n\tfmt.Scan(&n, &target)\n\n\telements := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&elements[i])\n\t}\n\n\tif subset_sum(target, -1, elements, 0) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n\n}\n",
+            "lines": "37"
+        }
+    ]
+}

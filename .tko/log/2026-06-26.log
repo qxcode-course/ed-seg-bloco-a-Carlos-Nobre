@@ -1,0 +1,14 @@
+2026-06-26 23:42:36, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-06-26 23:42:36, EXEC, v:1, k:ed@distancia, mode:FULL, rate:28
+2026-06-26 23:49:43, EXEC, v:1, k:ed@distancia, mode:FULL, rate:28, size:74
+2026-06-26 23:50:24, EXEC, v:1, k:ed@distancia, mode:FULL, rate:100, size:74
+2026-06-26 23:50:34, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-06-26 23:50:22, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-06-26 23:51:36, SELF, v:1, k:ed@distancia, self:1, rate:100, study:48, guided:1
+2026-06-26 23:51:50, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-06-26 23:51:51, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-06-26 23:51:52, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:62
+2026-06-26 23:51:50, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-06-26 23:51:50, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-06-26 23:51:50, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-06-26 23:58:11, MOVE, v:1, k:ed@wordsearch, mode:EDIT
